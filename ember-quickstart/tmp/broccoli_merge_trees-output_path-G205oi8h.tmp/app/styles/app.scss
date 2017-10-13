@@ -1,0 +1,148 @@
+@import 'ember-paper';
+body{
+  background: #f5f5f5!important;
+}
+
+ 
+#forma{
+ margin-top: 60px;
+ 
+ }
+#forma h3{
+  font-size: 24px;
+  display: inline-block;
+
+}
+
+a.ember-view{
+  color: #E57373!important;
+  display: inline-block;
+  float: right;
+    margin-top: 30px;
+}
+#forma login-link{
+  display: inline-block;
+  float: right;
+    margin-top: 30px;
+    
+    color: #E57373!important;
+
+}
+.register-forma{
+  margin-top: 15px;
+}
+html, body {
+  font-family: 'antoniolight', sans-serif;
+  background: #f5f5f5;
+  height: 100%
+}
+.form-control{
+  border-radius:0!important;
+}
+.AppName{
+   margin-top: 30px;
+    
+}
+.btn-danger{
+  margin-top:15px;
+  border-radius:0!important;
+}
+.navbar-default{
+
+  background-color: white!important;
+  display: inline;
+}
+li{
+  list-style-type: none;
+  display: inline;
+  overflow:hidden;
+   margin-top: 15px;
+   margin-right: 30px;
+   margin-left: 30px;
+  font-weight: bold;
+  color: black!important;
+    
+}
+a{
+  color: black!important;
+}
+a.active{
+  color: #E57373 !important;
+}
+
+.card-block{
+  background-color: black;
+  margin-top: 75px;
+  height: 100px;
+    background-color: #10242d;
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+li2 {
+  list-style-type: none;
+  display: inline;
+  overflow:hidden;
+   margin-top: 30px;
+   margin-right: 10px;
+   margin-left: 10px;
+    font-size: 12px;
+    font-weight: bold;
+  color: white!important;
+    
+}
+
+li3{
+ list-style-type: none;
+  display: inline;
+  overflow:hidden;
+  font-size: 12px;
+   margin-top: 30px;
+   margin-right: 5px;
+   margin-left: 20px;
+
+  color: #808a8e!important;
+}
+
+.force-to-bottom {
+  position:absolute;
+ 
+  width: 100%;
+}
+#header{
+    background-image: url("restoran-home.jpg");
+    width: 100%;
+    height: 370px;
+    background-size: cover;
+    opacity: .70;
+}
+#carouselpasta{
+    background-image: url("pasta.jpg");
+    width: 100%;
+    height: 370px;
+    background-size: cover;
+    opacity:.70;
+    padding-left:15px;
+}
+#slike{
+  opacity:1;
+}
+h4{
+margin-top: 50px;
+  text-align: center;
+  opacity:1;
+  color:black;
+  font-size:25px;
+
+}
+.row{
+  margin-top:30px;
+}
+
+.rounded{
+width:250px;
+padding: 5px;
+
+}

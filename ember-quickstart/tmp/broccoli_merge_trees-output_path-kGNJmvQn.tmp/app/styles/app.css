@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'antoniolight';
+    src: url('../fonts/antonio/antonio-light-webfont.eot');
+    src: url('../fonts/antonio/antonio-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/antonio/antonio-light-webfont.woff2') format('woff2'),
+         url('../fonts/antonio/antonio-light-webfont.woff') format('woff'),
+         url('../fonts/antonio/antonio-light-webfont.ttf') format('truetype'),
+         url('../fonts/antonio/antonio-light-webfont.svg#antoniolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+html {
+  font-family: 'antoniolight', sans-serif;
+  background: black;
+}
+h1 {
+	text-align: center;
+  background-color: black;
+  color: lime;
+  margin: 0px;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-shadow: 1px 1px 1px black,
+               2px 2px 1px lime;
+}

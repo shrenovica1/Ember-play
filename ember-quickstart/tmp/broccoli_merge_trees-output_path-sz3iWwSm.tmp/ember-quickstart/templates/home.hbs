@@ -1,0 +1,133 @@
+{{outlet}}
+<!---NAVIGATION BAR-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light " >
+<header>
+
+    <div id="header">
+    <div class="pozadina"></div>
+        <div class="container"> 
+
+ <div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+  
+  <li style="float:left "><a href="#AppName">AppName</a></li>
+  <li style="float:right "><a class="active" href="#Login">Login</a></li>
+  <li style="float:right "><a href="#Restaurants">Restaurants</a></li>
+    <li style="float:right "><a href="#Home">Home</a></li>
+ <div class="naslov">
+  <h1> Make a free reservation </h1>
+  <h5> Choose your table from 757 restaurants near you</h5>
+  </div>
+  </div>
+  </div>
+ 
+  {{restaurant-search}}
+    </div>
+  
+  </div>
+</header>
+</nav>
+
+
+<div class="popularRestaurants">
+  <div class="container"> 
+
+ <div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+
+ <li style="float:left; margin: 0; padding: 0; border: 0;  " >
+{{popular-restaurants}}
+</li>
+
+  <li style="float:left; margin: 0; padding: 0; border: 0; " >{{popular-restaurants}}</li>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+<header>
+    <div id="carouselpasta">
+     <div class="pozadina"></div>
+        <div class="container" id="slike">
+       
+            <div class="row">
+                <div class ="col-xs-2" id="logo">
+                    
+                </div>
+                <div class ="col-xs-10" id="menu" col-md-offset-0>
+                <div id="specials">
+                
+                </div>
+                 <h4 class="text-center"> Specials </h4>
+                    <!--CAROUSEL-->
+
+						{{#carousel-container }}
+						  {{#carousel-body}}
+						    {{#carousel-item}}
+
+						    <img src="{{unbound relativePath}}assets/pizza.jpg" class="rounded" id= "boja">
+
+						    <img src="{{unbound relativePath}}assets/spicy.jpg" class="rounded" id= "boja">
+
+						    <img src="{{unbound relativePath}}assets/cupcake.jpg" class="rounded" id= "boja">
+						    
+						{{/carousel-item}}
+						    {{#carousel-item}}
+						      <img src="{{unbound relativePath}}assets/restoran-home.jpg" class="rounded">
+						    {{/carousel-item}}
+						    {{#carousel-item}}
+						      Angularjs
+						    {{/carousel-item}}
+						  {{/carousel-body}}
+						 
+						  {{#carousel-arrow direction="left"}}
+						      <span class="glyphicon glyphicon-arrow-left"></span>
+
+						  {{/carousel-arrow}}
+						  {{#carousel-arrow direction="right" tagName="button"}}
+						    Slide Right
+						  {{/carousel-arrow}}
+             
+
+						{{/carousel-container}}
+                
+                  </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div class="popularLocations">
+
+{{popular-locations}}
+</div>
+
+
+ <div class="card">
+    
+    <div class="card-block force-to-bottom">
+    <div class="container"> 
+ <div class="row ">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-0">
+      <li3 style="float:left " small class="text-muted"><a href="#privacy">Privacy Policy</a></li3>
+  <li3 style="float:left "><a class="term" href="#term">Term of use</a></li3>
+  <li3 style="float:left "><a href="#sitemap">Sitemap</a></li3>
+    <li3 small class="text-muted"style="float:left "><a href="#mobile">Mobile Site</a></li3>
+    <li2 style="float:right"><a class="about" href="#about">About Us</a></li2>
+    <li2 style="float:right"><a class="blog" href="#blog">Blog</a></li2>
+    <li2 style="float:right"><a class="careers" href="#careers">Careers</a></li2>
+    <li2 style="float:right" ><a class="press" href="#press">Press</a></li2>
+     <li2 style="float:right"><a class="add" href="#add">Advertise</a></li2>
+</div>
+  </div>
+  </div>
+ 
+    </div>
+  </div>

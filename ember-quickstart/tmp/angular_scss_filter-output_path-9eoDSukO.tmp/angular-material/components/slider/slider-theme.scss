@@ -1,0 +1,181 @@
+md-slider.md-default-theme , md-slider {
+
+  .md-track {
+    background-color: color($foreground, "3");
+  }
+  .md-track-ticks {
+    color: contrastColor($background);
+  }
+  .md-focus-ring {
+    background-color: rgba(color($accent, "A200"), 0.2);
+  }
+  .md-disabled-thumb {
+    border-color: color($background);
+    background-color: color($background);
+  }
+
+  &.md-min {
+    .md-thumb:after {
+      background-color: color($background);
+      border-color: color($foreground, "3");
+    }
+
+    .md-focus-ring {
+      background-color: rgba(color($foreground, "3"), 0.38);
+    }
+
+    &[md-discrete] {
+      .md-thumb {
+        &:after {
+          background-color: contrastColor($background);
+          border-color: transparent;
+        }
+      }
+
+      .md-sign {
+        background-color: color($background, "400");
+        &:after {
+          border-top-color: color($background, "400");
+        }
+      }
+
+      &[md-vertical] {
+        .md-sign:after {
+          border-top-color: transparent;
+          border-left-color: color($background, "400");
+        }
+      }
+    }
+  }
+
+  .md-track.md-track-fill {
+    background-color: color($accent);
+  }
+  .md-thumb:after {
+    border-color: color($accent);
+    background-color: color($accent);
+  }
+  .md-sign {
+    background-color: color($accent);
+    &:after {
+      border-top-color: color($accent);
+    }
+  }
+
+  &[md-vertical] {
+    .md-sign:after {
+      border-top-color: transparent;
+      border-left-color: color($accent);
+    }
+  }
+
+  .md-thumb-text {
+    color: contrastColor($accent);
+  }
+
+  &.md-warn {
+    .md-focus-ring {
+      background-color: rgba(color($warn, "200"), 0.38);
+    }
+    .md-track.md-track-fill {
+      background-color: color($warn);
+    }
+    .md-thumb:after {
+      border-color: color($warn);
+      background-color: color($warn);
+    }
+    .md-sign {
+      background-color: color($warn);
+
+      &:after {
+        border-top-color: color($warn);
+      }
+    }
+
+    &[md-vertical] {
+      .md-sign:after {
+        border-top-color: transparent;
+        border-left-color: color($warn);
+      }
+    }
+
+    .md-thumb-text {
+      color: contrastColor($warn);
+    }
+  }
+
+  &.md-primary {
+    .md-focus-ring {
+      background-color: rgba(color($primary, "200"), 0.38);
+    }
+    .md-track.md-track-fill {
+      background-color: color($primary);
+    }
+    .md-thumb:after {
+      border-color: color($primary);
+      background-color: color($primary);
+    }
+    .md-sign {
+      background-color: color($primary);
+
+      &:after {
+        border-top-color: color($primary);
+      }
+    }
+
+    &[md-vertical] {
+      .md-sign:after {
+        border-top-color: transparent;
+        border-left-color: color($primary);
+      }
+    }
+
+    .md-thumb-text {
+      color: contrastColor($primary);
+    }
+  }
+
+  &[disabled] {
+    .md-thumb:after {
+      border-color: transparent;
+    }
+    &:not(.md-min), &[md-discrete] {
+      .md-thumb:after {
+        background-color: color($foreground, "3");
+        border-color: transparent;
+      }
+    }
+  }
+
+  &[disabled][readonly] {
+    .md-sign {
+      background-color: color($background, "400");
+      &:after {
+        border-top-color: color($background, "400");
+      }
+    }
+
+    &[md-vertical] {
+      .md-sign:after {
+        border-top-color: transparent;
+        border-left-color: color($background, "400");
+      }
+    }
+
+    .md-disabled-thumb {
+      border-color: transparent;
+      background-color: transparent;
+    }
+  }
+}
+
+md-slider-container {
+  &[disabled] {
+    & > *:first-child,
+    & > *:last-child {
+      &:not(md-slider){
+        color: color($foreground, "3");
+      }
+    }
+  }
+}

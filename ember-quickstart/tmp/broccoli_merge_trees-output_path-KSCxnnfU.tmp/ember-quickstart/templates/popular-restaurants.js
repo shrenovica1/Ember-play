@@ -1,0 +1,1 @@
+export default Ember.HTMLBars.template({"id":"f11ncp09","block":"{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false]],\"hasEval\":false}","meta":{"moduleName":"ember-quickstart/templates/popular-restaurants.hbs"}});

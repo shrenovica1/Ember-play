@@ -1,0 +1,19 @@
+md-progress-circular.md-default-theme , md-progress-circular {
+
+  path {
+    stroke: color($primary);
+  }
+
+  &.md-warn {
+    path {
+      stroke: color($warn);
+    }
+  }
+
+  &.md-accent {
+    path {
+      stroke: color($accent);
+    }
+  }
+
+}

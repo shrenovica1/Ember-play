@@ -1,0 +1,14 @@
+.md-subheader.md-default-theme , .md-subheader {
+  color: rgba(color($foreground, "2"), 0.23);
+  background-color: color($background, "default");
+
+  &.md-primary {
+    color: color($primary)
+  }
+  &.md-accent {
+    color: color($accent)
+  }
+  &.md-warn {
+    color: color($warn)
+  }
+}

@@ -1,0 +1,103 @@
+{{outlet}}
+<!---NAVIGATION BAR-->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light " >
+<header>
+    <div id="header">
+        <div class="container"> 
+ <div class="row">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+  
+  <li style="float:left "><a href="#AppName">AppName</a></li>
+  <li style="float:right "><a class="active" href="#Login">Login</a></li>
+  <li style="float:right "><a href="#Restaurants">Restaurants</a></li>
+    <li style="float:right "><a href="#Home">Home</a></li>
+
+  </div>
+  </div>
+    </div>
+  </div>
+</header>
+</nav>
+
+
+{{popular-restaurants}}
+
+
+
+
+
+
+<header>
+    <div id="carouselpasta">
+        <div class="container" id="slike">
+        <h4 class="text-center"> Specials </h4>
+            <div class="row">
+                <div class ="col-xs-2" id="logo">
+                    
+                </div>
+                <div class ="col-xs-10" id="menu" col-md-offset-0>
+                <div id="specials">
+                
+                </div>
+                    <!--CAROUSEL-->
+
+						{{#carousel-container }}
+						  {{#carousel-body}}
+						    {{#carousel-item}}
+
+						    <img src="{{unbound relativePath}}assets/pizza.jpg" class="rounded" id= "boja">
+
+						    <img src="{{unbound relativePath}}assets/spicy.jpg" class="rounded" id= "boja">
+
+						    <img src="{{unbound relativePath}}assets/cupcake.jpg" class="rounded" id= "boja">
+						    
+						{{/carousel-item}}
+						    {{#carousel-item}}
+						      <img src="{{unbound relativePath}}assets/restoran-home.jpg" class="rounded">
+						    {{/carousel-item}}
+						    {{#carousel-item}}
+						      Angularjs
+						    {{/carousel-item}}
+						  {{/carousel-body}}
+						 
+						  {{#carousel-arrow direction="left"}}
+						      <span class="glyphicon glyphicon-arrow-left"></span>
+
+						  {{/carousel-arrow}}
+						  {{#carousel-arrow direction="right" tagName="button"}}
+						    Slide Right
+						  {{/carousel-arrow}}
+						{{/carousel-container}}
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+{{popular-locations}}
+
+
+
+ <div class="card">
+    
+    <div class="card-block force-to-bottom">
+    <div class="container"> 
+ <div class="row ">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-0">
+      <li3 style="float:left " small class="text-muted"><a3 href="#privacy">Privacy Policy</a3></li3>
+  <li3 style="float:left "><a3 class="term" href="#term">Term of use</a3></li3>
+  <li3 style="float:left "><a3 href="#sitemap">Sitemap</a3></li3>
+    <li3 small class="text-muted"style="float:left "><a3 href="#mobile">Mobile Site</a3></li3>
+    <li2 style="float:right"><a2 class="about" href="#about">About Us</a2></li2>
+    <li2 style="float:right"><a2 class="blog" href="#blog">Blog</a2></li2>
+    <li2 style="float:right"><a2 class="careers" href="#careers">Careers</a2></li2>
+    <li2 style="float:right" ><a2 class="press" href="#press">Press</a2></li2>
+     <li2 style="float:right"><a2 class="add" href="#add">Advertise</a2></li2>
+</div>
+  </div>
+  </div>
+ 
+    </div>
+  </div>

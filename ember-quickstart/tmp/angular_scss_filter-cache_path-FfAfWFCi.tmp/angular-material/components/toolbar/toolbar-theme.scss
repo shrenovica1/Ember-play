@@ -1,0 +1,38 @@
+md-toolbar.md-default-theme:not(.md-menu-toolbar) , md-toolbar:not(.md-menu-toolbar) {
+  background-color: color($primary);
+  color: contrastColor($primary);
+
+  md-icon {
+    color: contrastColor($primary);
+    fill: contrastColor($primary);
+  }
+
+  .md-button[disabled] md-icon {
+    color: rgba(contrastColor($primary), 0.26);
+    fill: rgba(contrastColor($primary), 0.26);
+  }
+
+  &.md-accent {
+    background-color: color($accent);
+    color: contrastColor($accent);
+
+    .md-ink-ripple {
+      color: contrastColor($accent);
+    }
+
+    md-icon {
+      color: contrastColor($accent);
+      fill: contrastColor($accent);
+    }
+
+    .md-button[disabled] md-icon {
+      color: rgba(contrastColor($accent), 0.26);
+      fill: rgba(contrastColor($accent), 0.26);
+    }
+  }
+
+  &.md-warn {
+    background-color: color($warn);
+    color: contrastColor($warn);
+  }
+}

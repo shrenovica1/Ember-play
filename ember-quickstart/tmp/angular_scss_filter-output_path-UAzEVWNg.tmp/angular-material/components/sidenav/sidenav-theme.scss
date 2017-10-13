@@ -1,0 +1,5 @@
+md-sidenav.md-default-theme , md-sidenav {
+  &, md-content {
+    background-color: rgba(color($background), 1);    
+  }
+}

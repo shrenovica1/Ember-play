@@ -1,0 +1,127 @@
+@mixin md-tab-primary {
+  > md-tabs-wrapper {
+    background-color: color($primary);
+    > md-tabs-canvas {
+      > md-pagination-wrapper {
+        > md-tab-item:not([disabled]) {
+          &, md-icon {
+            color: color($primary, "100");
+          }
+          &.md-active, &.md-focused {
+            &, md-icon {
+              color: contrastColor($primary);
+            }
+          }
+          &.md-focused {
+            background: rgba(contrastColor($primary), 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+@mixin md-tab-warn {
+  > md-tabs-wrapper {
+    background-color: color($warn);
+    > md-tabs-canvas {
+      > md-pagination-wrapper {
+        > md-tab-item:not([disabled]) {
+          &, md-icon {
+            color: color($warn, "100");
+          }
+          &.md-active, &.md-focused {
+            &, md-icon {
+              color: contrastColor($warn);
+            }
+          }
+          &.md-focused {
+            background: rgba(contrastColor($warn), 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+@mixin md-tab-accent {
+  > md-tabs-wrapper {
+    background-color: color($accent);
+    > md-tabs-canvas {
+      > md-pagination-wrapper {
+        > md-tab-item:not([disabled]) {
+          &, md-icon {
+            color: color($accent, "A100");
+          }
+          &.md-active, &.md-focused {
+            &, md-icon {
+              color: contrastColor($accent);
+            }
+          }
+          &.md-focused {
+            background: rgba(contrastColor($accent), 0.1);
+          }
+        }
+        > md-ink-bar {
+          color: rgba(color($primary, "600"), 1);
+          background: rgba(color($primary, "600"), 1);
+        }
+      }
+    }
+  }
+
+}
+md-tabs.md-default-theme , md-tabs {
+  md-tabs-wrapper {
+    background-color: transparent;
+    border-color: color($foreground, "4");
+  }
+  .md-paginator md-icon {
+    color: color($primary);
+  }
+
+  md-ink-bar {
+    color: color($accent);
+    background: color($accent);
+  }
+
+  .md-tab {
+    color: color($foreground, "2");
+    &[disabled] {
+      &, md-icon {
+        color: color($foreground, "3");
+      }
+    }
+    &.md-active, &.md-focused {
+      &, md-icon {
+        color: color($primary);
+      }
+    }
+    &.md-focused {
+      background: rgba(color($primary), 0.1);
+    }
+    .md-ripple-container {
+      color: color($accent, "A100");
+    }
+  }
+
+  &.md-accent {
+    @include md-tab-accent();
+  }
+
+  &.md-primary {
+    @include md-tab-primary();
+  }
+
+  &.md-warn {
+    @include md-tab-warn();
+  }
+}
+
+md-toolbar > md-tabs.md-default-theme , md-toolbar > md-tabs {
+  @include md-tab-primary();
+}
+md-toolbar.md-accent > md-tabs.md-default-theme , md-toolbar.md-accent > md-tabs {
+  @include md-tab-accent();
+}
+md-toolbar.md-warn > md-tabs.md-default-theme , md-toolbar.md-warn > md-tabs {
+  @include md-tab-warn();
+}
