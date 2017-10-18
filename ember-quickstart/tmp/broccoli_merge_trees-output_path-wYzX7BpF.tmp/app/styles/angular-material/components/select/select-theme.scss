@@ -1,0 +1,163 @@
+md-input-container {
+
+  // The asterisk of the select should always use the warn color.
+  md-select.md-default-theme .md-select-value ,   md-select .md-select-value {
+    span:first-child:after {
+      color: color($warn, "A700")
+    }
+  }
+
+  // When the select is blurred and not invalid then the asterisk should use the foreground color.
+  &:not(.md-input-focused):not(.md-input-invalid) {
+    md-select.md-default-theme .md-select-value ,     md-select .md-select-value {
+      span:first-child:after {
+        color: color($foreground, "3");
+      }
+    }
+  }
+
+  &.md-input-focused:not(.md-input-has-value) {
+    md-select.md-default-theme .md-select-value ,     md-select .md-select-value {
+      color: color($primary);
+
+      &.md-select-placeholder {
+        color: color($primary);
+      }
+    }
+  }
+
+  &.md-input-invalid {
+    md-select.md-default-theme .md-select-value ,     md-select .md-select-value {
+      color: color($warn, "A700") !important;
+      border-bottom-color: color($warn, "A700") !important;
+    }
+
+    md-select.md-default-theme.md-no-underline .md-select-value ,     md-select.md-no-underline .md-select-value {
+      border-bottom-color: transparent !important;
+    }
+  }
+
+}
+
+md-select.md-default-theme , md-select {
+  &[disabled] .md-select-value {
+    border-bottom-color: transparent;
+    background-image: linear-gradient(to right, color($foreground, "3") 0%, color($foreground, "3") 33%, transparent 0%);
+    background-image: -ms-linear-gradient(left, transparent 0%, color($foreground, "3") 100%);
+  }
+
+  .md-select-value {
+    border-bottom-color: color($foreground, "4");
+
+    &.md-select-placeholder {
+      color: color($foreground, "3");
+    }
+
+    span:first-child:after {
+      color: color($warn, "A700")
+    }
+  }
+
+  &.md-no-underline .md-select-value {
+    border-bottom-color: transparent !important;
+  }
+
+  &.ng-invalid.ng-touched {
+    .md-select-value {
+      color: color($warn, "A700") !important;
+      border-bottom-color: color($warn, "A700") !important;
+    }
+
+    &.md-no-underline .md-select-value {
+      border-bottom-color: transparent !important;
+    }
+  }
+
+  &:not([disabled]):focus {
+    .md-select-value {
+      border-bottom-color: color($primary);
+      color: color($foreground, "1");
+      &.md-select-placeholder {
+        color: color($foreground, "1");
+      }
+    }
+
+    &.md-no-underline .md-select-value {
+      border-bottom-color: transparent !important;
+    }
+
+    &.md-accent .md-select-value {
+      border-bottom-color: color($accent);
+    }
+
+    &.md-warn .md-select-value {
+      border-bottom-color: color($warn);
+    }
+  }
+
+  &[disabled] {
+    .md-select-value {
+      color: color($foreground, "3");
+
+      &.md-select-placeholder {
+        color: color($foreground, "3");
+      }
+    }
+
+    .md-select-icon {
+      color: color($foreground, "3");
+    }
+  }
+
+  .md-select-icon {
+    color: color($foreground, "2");
+  }
+}
+
+md-select-menu.md-default-theme , md-select-menu {
+  md-content {
+    background: color($background, "A100");
+
+    md-optgroup {
+      color: rgba(color($background, "600"), 0.87);
+    }
+
+    md-option {
+      color: rgba(color($background, "900"), 0.87);
+
+      &[disabled] {
+        .md-text {
+          color: rgba(color($background, "400"), 0.87);
+        }
+      }
+
+      &:not([disabled]) {
+        &:focus,
+        &:hover {
+          background: color($background, "200")
+        }
+      }
+
+      &[selected] {
+        color: color($primary, "500");
+        &:focus {
+          color: color($primary, "600");
+        }
+        &.md-accent {
+          color: color($accent);
+          &:focus {
+            color: color($accent, "A700");
+          }
+        }
+      }
+    }
+  }
+}
+
+.md-checkbox-enabled.md-default-theme , .md-checkbox-enabled {
+  @include checkbox-primary('[selected]');
+
+  md-option .md-text {
+    color: rgba(color($background, "900"), 0.87);
+  }
+}

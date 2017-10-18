@@ -1,0 +1,14 @@
+md-divider.md-default-theme , md-divider {
+  border-top-color: color($foreground, "4");
+}
+
+.layout-row,
+.layout-xs-row, .layout-gt-xs-row,
+.layout-sm-row, .layout-gt-sm-row,
+.layout-md-row, .layout-gt-md-row,
+.layout-lg-row, .layout-gt-lg-row,
+.layout-xl-row {
+  & > md-divider.md-default-theme ,  > md-divider {
+    border-right-color: color($foreground, "4");
+  }
+}

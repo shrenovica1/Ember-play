@@ -1,0 +1,6 @@
+define("ember-paper/templates/components/paper-form", ["exports"], function (exports) {
+  "use strict";
+
+  exports.__esModule = true;
+  exports.default = Ember.HTMLBars.template({ "id": "W1jdkNR1", "block": "{\"symbols\":[\"&default\"],\"statements\":[[11,1,[[25,\"hash\",null,[[\"isValid\",\"isInvalid\",\"isTouched\",\"isInvalidAndTouched\",\"input\",\"submit-button\",\"select\",\"autocomplete\",\"onSubmit\"],[[19,0,[\"isValid\"]],[19,0,[\"isInvalid\"]],[19,0,[\"isTouched\"]],[19,0,[\"isInvalidAndTouched\"]],[25,\"component\",[[19,0,[\"inputComponent\"]]],[[\"parentComponent\",\"onValidityChange\"],[[19,0,[]],[25,\"action\",[[19,0,[]],\"onValidityChange\"],null]]]],[25,\"component\",[[19,0,[\"submitButtonComponent\"]]],[[\"type\"],[\"submit\"]]],[25,\"component\",[[19,0,[\"selectComponent\"]]],[[\"parentComponent\",\"onValidityChange\"],[[19,0,[]],[25,\"action\",[[19,0,[]],\"onValidityChange\"],null]]]],[25,\"component\",[[19,0,[\"autocompleteComponent\"]]],[[\"parentComponent\",\"onValidityChange\"],[[19,0,[]],[25,\"action\",[[19,0,[]],\"onValidityChange\"],null]]]],[25,\"action\",[[19,0,[]],\"onSubmit\"],null]]]]]],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-paper/templates/components/paper-form.hbs" } });
+});
