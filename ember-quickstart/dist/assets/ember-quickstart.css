@@ -20031,3 +20031,75 @@ h4 {
 .rating > label:hover ~ input:checked ~ label,
 .rating > input:checked ~ label:hover ~ label {
   color: #FFED85; }
+
+#book {
+  height: 400px;
+  position: relative; }
+
+.reservation {
+  postition: center; }
+
+.img {
+  position: relative;
+  padding: 4px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px; }
+
+.thm {
+  margin-top: 450px;
+  float: left; }
+
+.thm h6, h3 {
+  float: right;
+  display: inline-block; }
+
+#tableName {
+  float: left;
+  margin-top: -190px; }
+
+#upper {
+  margin-bottom: 0px !important;
+  align: left;
+  color: white; }
+
+#lower {
+  margin-top: 0px !important;
+  align: left;
+  color: white; }
+
+#makeReservation {
+  position: center;
+  background-color: white;
+  height: 180px;
+  width: 700px;
+  margin-right: 250px;
+  margin-top: -210px; }
+  #makeReservation #make {
+    position: absolute;
+    height: 180px;
+    width: 700px; }
+
+#map {
+  height: 667px;
+  width: 700px;
+  position: center;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 250px; }
+
+#menu {
+  height: 660px;
+  width: 700px;
+  position: center;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 250px; }
+
+#photos {
+  height: 583px;
+  width: 700px;
+  position: center;
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 250px; }

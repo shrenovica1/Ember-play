@@ -61,15 +61,38 @@ public class UsersController extends Controller {
         session("email", login.getEmail());
         String poruka= session("email");
 
+
         System.out.println("kontroler");
 
         this.UsersService.signin(login);
+        System.out.println("kontroler "+ login.getPassword());
+
+        String result= authenticate(login);
         //session().clear();
 
-        return ok("kontroler");
+        if(result.equals("Invalid user or password")) return badRequest("Invalid user or password");
+        return ok(result);
     }
-    public Result authenticate (){
+    public String authenticate (Login login){
 
+        String validate= validate(login);
+
+       // return ok(validate);
+        return validate;
+    }
+
+    public String validate(Login login){
+
+        if(login.getEmail()==null || login.getEmail().equals("") ||login.getPassword().equals("") || login.getPassword()==null ){
+            return "Invalid user or password";
+        }
+        return "You're logged in";
+    }
+
+    @Transactional
+    public Result logout(){
+        session().clear();
+    return ok();
     }
 
 

@@ -1,0 +1,6 @@
+define("ember-paper/templates/components/paper-switch", ["exports"], function (exports) {
+  "use strict";
+
+  exports.__esModule = true;
+  exports.default = Ember.HTMLBars.template({ "id": "ZQb/Zyki", "block": "{\"symbols\":[\"&default\"],\"statements\":[[6,\"div\"],[9,\"class\",\"md-switch-bar\"],[7],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"md-container\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"md-bar\"],[7],[8],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"md-thumb-container\"],[10,\"style\",[18,\"thumbContainerStyle\"],null],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"md-thumb\"],[7],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[4,\"if\",[[22,1]],null,{\"statements\":[[0,\"  \"],[6,\"div\"],[9,\"class\",\"md-label\"],[7],[0,\"\\n    \"],[11,1],[0,\"\\n  \"],[8],[0,\"\\n\"]],\"parameters\":[]},{\"statements\":[[0,\"  \"],[6,\"div\"],[9,\"class\",\"md-label\"],[7],[0,\"\\n    \"],[1,[18,\"label\"],false],[0,\"\\n  \"],[8],[0,\"\\n\"]],\"parameters\":[]}]],\"hasEval\":false}", "meta": { "moduleName": "ember-paper/templates/components/paper-switch.hbs" } });
+});

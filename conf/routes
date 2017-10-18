@@ -8,6 +8,11 @@ POST     /singup                  controllers.UsersController.create
 +nocsrf
 POST     /singin                  controllers.UsersController.signin
 
++nocsrf
+POST    /signout                  controllers.UsersController.logout
+
+
+
 
 
 # An example controller showing a sample home page

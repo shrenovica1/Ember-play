@@ -29,18 +29,7 @@ import models.HibernateUtil;
 
 
 public  class usersRepository{
-   // SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-  //  SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 
-    //Session session = sessionFactory.openSession();
-  //  session.beginTransaction();
-    //session.save(myObject);
-   // HibernateUtil hibernateUtil = new HibernateUtil();
-    //Session session=hibernateUtil.getSessionFactory().openSession();
-  // EntityManagerFactory emfdb = Persistence.createEntityManagerFactory("defaultPersistenceUnit");
-    //EntityManager em;
-    //Session session=(Session)em.getDelegate();
-    //Session session=factory.openSession();
     @Transactional
     public users create(users user){
         JPA.em().persist(user);
@@ -52,22 +41,37 @@ public  class usersRepository{
     public Login signin(Login login){
         System.out.println("repository");
 
-
-    //  session.beginTransaction();
        String hql = "select city from users where email = '"+login.getEmail()+"'";
        // session("email", login.getEmail());
         Query query = JPA.em().createQuery(hql);
         List list=query.getResultList();
 
-        if(list.size()==0) {
-
+        boolean aut= validate(login);
+        if(list.size()==0 || aut==false) {
+            login.setPassword("");
             System.out.println("ne postoji user");
+
         }
 
-
-       // System.out.println("heeeeeeeej" +list.get(0));
-
         return login;
+    }
+    @Transactional
+    public boolean validate(Login login){
+        String hql = "select email from users where email = '"+login.getEmail()+"'";
+        Query query = JPA.em().createQuery(hql);
+        List list=query.getResultList();
+
+        if(list.size()==0) {
+           return false;
+        }
+
+            hql = "select passwor from users where email ='" + login.getEmail() + "'";
+            query = JPA.em().createQuery(hql);
+            String pass = query.getSingleResult().toString();
+            if (pass.equals(login.getPassword())) return true;
+
+
+        return false;
     }
    /* private Class<T> getParametrizedClass() {
         return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];

@@ -47,4 +47,5 @@ public class Restoran {
     public Restoran(String name){
         this.name=name;
     }
+
 }
