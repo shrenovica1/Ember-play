@@ -16,6 +16,13 @@ import java.util.UUID;
 import play.data.*;
 import javax.validation.Validator;
 import play.mvc.Controller;
+import models.JwtUtility;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import play.libs.Json;
+/*import org.json.JSONArray;
+import org.json.JSONObject;
+import org.json.JSONException;*/
+
 
 
 public class UsersController extends Controller {
@@ -60,24 +67,28 @@ public class UsersController extends Controller {
         }
         session("email", login.getEmail());
         String poruka= session("email");
-
-
         System.out.println("kontroler");
 
         this.UsersService.signin(login);
         System.out.println("kontroler "+ login.getPassword());
 
         String result= authenticate(login);
-        //session().clear();
+        JwtUtility jwt= new JwtUtility();
+        String token=jwt.makeToken();
 
-        if(result.equals("Invalid user or password")) return badRequest("Invalid user or password");
-        return ok(result);
+        ObjectNode item = Json.newObject();
+        item.put("token", token);
+        if(result.equals("Invalid user or password")) {
+            ObjectNode valid = Json.newObject();
+            valid.put("token", "Invalid user or password");
+            return badRequest(valid);
+        }
+        return ok(item);
     }
     public String authenticate (Login login){
 
         String validate= validate(login);
 
-       // return ok(validate);
         return validate;
     }
 

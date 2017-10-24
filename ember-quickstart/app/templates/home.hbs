@@ -6,6 +6,8 @@
 
     <div id="header">
     <div class="pozadina"></div>
+      <div class="maskHome">
+ </div>
         <div class="container"> 
 
  <div class="row">
@@ -30,22 +32,75 @@
 </nav>
 
 
-<div class="popularRestaurants">
-  <div class="container"> 
 
- <div class="row">
-  <div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="container" id="popularRestaurants" style="margin-top: 280px;"> 
 
- <li style="float:left; margin: 0; padding: 0; border: 0;  " >
-{{popular-restaurants}}
-</li>
+  <div class="container-fluid" id="popularRest">
+  {{#each model.restaurants as |restaurant|}}
+   <div style="float: left; width: 33%; padding: 0px;">
+    <div class="container" id="popularLocations" style="margin: 0px; width:33%; ">
 
-  <li style="float:left; margin: 0; padding: 0; border: 0; " >{{popular-restaurants}}</li>
+  
+  <div class="komponenta" style="margin-top: 50px;">
+    <div class="col-md-3 col-xs-6 col-sm-3" id="komp">
+     <div style="float:left; margin: 0; padding: 0; margin-bottom:0px; " >
+     <img src="{{unbound relativePath}}assets/single-restaurant.jpeg" class="rounded" id= "boja">
+     <div style="width: 100px; float:left;">
+     <h5 style="padding-left: 10px;" > {{restaurant}}</h5>
+     </div>
+
+     
+     
+      <div class="location-city-name" style="width:140px;  ">
+      <div class="rating" style="float: left;" >
+
+
+      <div class="rating" style="float:left; width:210px; ">
+      
+
+           <div style="float:right; margin-top: 5px; padding-left:10px;">
+           <h6 > $$$$</h6>
+           </div>
+            <div style=" float:right; margin-top: 5px; padding-left:10px;">
+           <h6 > (175)</h6>
+           </div>
+          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Great - 5 stars"></label>
+          <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+          <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+          <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Good - 3.5 stars"></label>
+          <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Good - 3 stars"></label>
+          <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Could be better - 2.5 stars"></label>
+          <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Could be better - 2 stars"></label>
+          <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Not so good - 1.5 stars"></label>
+          <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Bad- 1 star"></label>
+          <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Bad - 0.5 stars"></label>
+
+           <hr style=" display: block;margin-top: 0.5em;color: black; width:250px;border-style: inset;border-width: 1px; opacity:0.5;"/> 
+
+           <h6 style="padding-top: 0px; opacity:0.7;"> Italian | International | Mediterranean</h6>
+      </div>
 
 </div>
+
+
+        
+      </div>
+     
+       <input type="submit" value="Reserve now" class="btn  btn-reg" style="width:100%">
+        </div>
+    </div>
+  
+  </div>
 </div>
+  
+    </div>
+    {{/each}}
+    
+ 
+ </div>
+
 </div>
-</div>
+
 
 
 
@@ -54,6 +109,8 @@
 <header>
     <div id="carouselpasta">
      <div class="pozadina"></div>
+     <div class="maskCarousel">
+ </div>
         <div class="container" id="slike">
        
             <div class="row">
@@ -106,7 +163,12 @@
 
 <div class="popularLocations">
 
-{{popular-locations}}
+
+<h4> Popular locations</h4>
+{{#each model.locations as |loc|}}
+<h5 id="city"> {{loc}}</h5>
+{{/each}}
+<a {{action "refreshModel"}}>OSVJEYI MODDEL</a>
 </div>
 
 

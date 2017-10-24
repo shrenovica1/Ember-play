@@ -148,6 +148,162 @@ define('ember-quickstart/components/ember-wormhole', ['exports', 'ember-wormhole
     }
   });
 });
+define('ember-quickstart/components/g-autocomplete', ['exports', 'ember-cli-g-maps/components/g-autocomplete'], function (exports, _gAutocomplete) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gAutocomplete.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-address-marker', ['exports', 'ember-g-map/components/g-map-address-marker'], function (exports, _gMapAddressMarker) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapAddressMarker.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-address-route', ['exports', 'ember-g-map/components/g-map-address-route'], function (exports, _gMapAddressRoute) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapAddressRoute.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-infowindow', ['exports', 'ember-g-map/components/g-map-infowindow'], function (exports, _gMapInfowindow) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapInfowindow.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-marker', ['exports', 'ember-g-map/components/g-map-marker'], function (exports, _gMapMarker) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapMarker.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-polyline-coordinate', ['exports', 'ember-g-map/components/g-map-polyline-coordinate'], function (exports, _gMapPolylineCoordinate) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapPolylineCoordinate.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-polyline', ['exports', 'ember-g-map/components/g-map-polyline'], function (exports, _gMapPolyline) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapPolyline.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-route-address-waypoint', ['exports', 'ember-g-map/components/g-map-route-address-waypoint'], function (exports, _gMapRouteAddressWaypoint) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapRouteAddressWaypoint.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-route-waypoint', ['exports', 'ember-g-map/components/g-map-route-waypoint'], function (exports, _gMapRouteWaypoint) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapRouteWaypoint.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map-route', ['exports', 'ember-g-map/components/g-map-route'], function (exports, _gMapRoute) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMapRoute.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-map', ['exports', 'ember-g-map/components/g-map'], function (exports, _gMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMap.default;
+    }
+  });
+});
+define('ember-quickstart/components/g-maps', ['exports', 'ember-cli-g-maps/components/g-maps'], function (exports, _gMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMaps.default;
+    }
+  });
+});
 define('ember-quickstart/components/page-footer', ['exports'], function (exports) {
   'use strict';
 
@@ -1298,6 +1454,75 @@ define('ember-quickstart/components/welcome-page', ['exports', 'ember-welcome-pa
     }
   });
 });
+define('ember-quickstart/controllers/home', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  var RSVP = Ember.RSVP;
+  exports.default = Ember.Controller.extend({
+
+    /*model(){
+    	return RSVP.hash({
+    	restaurants: ['Cue', 'Metropolissss', 'Restoran', 'Metropolis', 'Montana', 'Chipas'],
+    	locations: 
+    });
+    }
+    */
+
+    /*  ajax: Ember.inject.service(),
+      self: this,
+      listOfCities: null,
+    	  
+     model() {
+       // var cities;
+       	 var response = this.get('ajax').request('/location',{
+             contentType: 'application/json',
+             dataType: 'json',
+           xhrFields: {
+             withCredentials: true
+           },
+       // var cities= JSON.stringify(locations.city);
+        // var res=cities[0];
+        //var 
+        success : function (odg) {
+        //	 console.log(odg.city);
+        //	self.listOfCities = odg.city;
+           alert("The server says: " +odg.city); 
+          
+          // cities.push(odg.city[0]);
+       // var cities=odg;
+         //alert(cities);
+          // document.getElementById("city").innerHTML=odg.city;  
+          // document.getElementById("city").innerHTML=cities[1];  
+           } //$("city").val(odg.city[0]);
+          
+      });
+    debugger
+       	return RSVP.hash({
+    	//	home: self.listOfCities
+    	});
+       //   alert("The server says: " +JSON.stringify(response));  
+    //return data;
+    /*response.then(() => function (odg) {
+        	 data=odg;
+        	
+           alert("The server says: " +odg.city);  
+           
+           }
+    	)
+      },*/
+
+    /*actions: {
+    	refreshModel() {
+     	debugger
+     	this.refresh();
+     }
+    }*/
+
+  });
+});
 define('ember-quickstart/controllers/popular-restaurants', ['exports'], function (exports) {
 	'use strict';
 
@@ -1316,31 +1541,54 @@ define('ember-quickstart/controllers/singin', ['exports'], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
+  var service = Ember.inject.service;
   exports.default = Ember.Controller.extend({
 
     ajax: Ember.inject.service(),
+    session: Ember.inject.service('login'),
+    // tokenCurrentUser: null,
+
+    //  grad=null,
+
 
     actions: {
+      // var token=null;
+
       login: function login() {
         var _this = this;
 
+        var token = "";
         var response = this.get('ajax').post('/singin', {
           contentType: 'application/json',
-          dataType: "json",
+          dataType: 'json',
           xhrFields: {
             withCredentials: true
           },
           data: JSON.stringify({ email: this.get('email'),
-            password: this.get('password') })
+            password: this.get('password') }),
+          success: function success(odg) {
+            token = odg.token;
+            // tokenCurrentUser=token
+            //alert(token);
+            //this.get('session').setToken(email,  password, odg.token);
+            //this.get('session').setToken(email,  password, odg.token);
+            // this.get('loginService').set('token', odg.token);
+            //alert("The server says: " + odg.token);
+          }
+
         });
-        this.transitionToRoute('home');
+
         response.then(function () {
-          return _this.transitionToRoute('home');
+          _this.get('session').setToken(token);
+          //    alert(token);
+          _this.transitionToRoute('home');
         }, function (error) {
-          _this.set('hasError', true);
+          alert("Invalid username or password");
+          //alert("The server says: " + odg.token);
         });
       }
     }
+
   });
 });
 define('ember-quickstart/controllers/singup', ['exports'], function (exports) {
@@ -2040,6 +2288,7 @@ define('ember-quickstart/router', ['exports', 'ember-quickstart/config/environme
     this.route('popular-restaurants');
 
     this.route('restaurant');
+    this.route('location');
   });
 
   exports.default = Router;
@@ -2050,7 +2299,67 @@ define('ember-quickstart/routes/home', ['exports'], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.Route.extend({});
+  var RSVP = Ember.RSVP;
+  var service = Ember.inject.service;
+  exports.default = Ember.Route.extend({
+    /*model(){
+    	return RSVP.hash({
+    	restaurants: ['Cue', 'Metropolissss', 'Restoran', 'Metropolis', 'Montana', 'Chipas'],
+    	locations: 
+    });
+    }
+    */
+    restaurantService: service('restaurant-service'),
+    ajax: Ember.inject.service(),
+    self: undefined,
+    listOfCities: null,
+
+    model: function model() {
+
+      return RSVP.hash({
+        locations: this.get('restaurantService').getLocations().then(function (data) {
+          return data.city;
+        }).catch(function (error) {
+          return null;
+        }),
+        restaurants: this.get('restaurantService').getRestaurants().then(function (data) {
+          return data.city;
+        }).catch(function (error) {
+          return null;
+        })
+
+      });
+      // var promise= new Promise (
+
+      /*	var response= this.get('ajax').request('/location',{
+           contentType: 'application/json',
+           dataType: 'json',
+          xhrFields: {
+           withCredentials: true
+         },
+           success : function (odg) {
+      	 console.log(odg.city);
+      	self.listOfCities = odg.city;
+       
+         } 
+             
+      });
+      
+      debugger
+      return RSVP.hash({
+      home: self.listOfCities
+      });*/
+    },
+
+
+    actions: {
+      refreshModel: function refreshModel() {
+        debugger;
+        this.refresh();
+      }
+    }
+
+  });
 });
 define('ember-quickstart/routes/index', ['exports'], function (exports) {
   'use strict';
@@ -2059,6 +2368,14 @@ define('ember-quickstart/routes/index', ['exports'], function (exports) {
     value: true
   });
   exports.default = Ember.Route.extend({});
+});
+define('ember-quickstart/routes/location', ['exports'], function (exports) {
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = Ember.Route.extend({});
 });
 define('ember-quickstart/routes/popular-restaurants', ['exports'], function (exports) {
   'use strict';
@@ -2069,12 +2386,12 @@ define('ember-quickstart/routes/popular-restaurants', ['exports'], function (exp
   exports.default = Ember.Route.extend({});
 });
 define('ember-quickstart/routes/restaurant', ['exports'], function (exports) {
-  'use strict';
+	'use strict';
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = Ember.Route.extend({});
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = Ember.Route.extend({});
 });
 define('ember-quickstart/routes/scientists', ['exports'], function (exports) {
 	'use strict';
@@ -2089,12 +2406,12 @@ define('ember-quickstart/routes/scientists', ['exports'], function (exports) {
 	});
 });
 define('ember-quickstart/routes/singin', ['exports'], function (exports) {
-  'use strict';
+	'use strict';
 
-  Object.defineProperty(exports, "__esModule", {
-    value: true
-  });
-  exports.default = Ember.Route.extend({});
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	exports.default = Ember.Route.extend({});
 });
 define('ember-quickstart/routes/singup', ['exports'], function (exports) {
   'use strict';
@@ -2186,6 +2503,67 @@ define('ember-quickstart/services/constants', ['exports'], function (exports) {
     MEDIA_PRIORITY: ['xl', 'gt-lg', 'lg', 'gt-md', 'md', 'gt-sm', 'sm', 'gt-xs', 'xs', 'print']
   });
 });
+define('ember-quickstart/services/g-map', ['exports', 'ember-cli-g-maps/services/g-map'], function (exports, _gMap) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _gMap.default;
+    }
+  });
+});
+define('ember-quickstart/services/login', ['exports', 'ember-quickstart/services/ajax'], function (exports, _ajax) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _ajax.default.extend({
+
+        currentUser: null,
+        isLogged: false,
+        token: null,
+        errorMessage: "",
+
+        setToken: function setToken(token) {
+            //this.set('currentUser', email);
+            this.set('isLogged', true);
+            this.set('token', token);
+        },
+
+
+        /*   login(email, password,token) {
+             return new Promise((resolve, reject) => {
+                 this.post('/singin', {
+                     xhrFields: {
+                         withCredentials: true,
+                       },
+                     data: {
+                         email: email,
+                         password: password
+                     }
+                 }).then(data => {
+                     this.set('currentUser', data);
+                     this.set('isLogged', true);
+                     resolve(data);
+                 })
+                 .catch(error => {
+                     this.set('currentUser', null);
+                     this.set('isLogged', false);
+                     reject(error);
+                 })
+             })
+         },*/
+
+        getIsLogged: function getIsLogged() {
+            return this.get('isLogged');
+        }
+    });
+});
 define('ember-quickstart/services/paper-sidenav', ['exports', 'ember-paper/services/paper-sidenav'], function (exports, _paperSidenav) {
   'use strict';
 
@@ -2211,6 +2589,44 @@ define('ember-quickstart/services/paper-toaster', ['exports', 'ember-paper/servi
       return _paperToaster.default;
     }
   });
+});
+define('ember-quickstart/services/restaurant-service', ['exports', 'ember-quickstart/services/ajax'], function (exports, _ajax) {
+    'use strict';
+
+    Object.defineProperty(exports, "__esModule", {
+        value: true
+    });
+    exports.default = _ajax.default.extend({
+        getLocations: function getLocations() {
+            var _this = this;
+
+            return new Promise(function (resolve, reject) {
+                _this.request('/location').then(function (data) {
+                    resolve(data);
+                    //alert(data.city);
+                }).catch(function (error) {
+                    _this.set('errorMessage', error);
+                    reject(error);
+                });
+            });
+        },
+        getRestaurants: function getRestaurants() {
+            var _this2 = this;
+
+            return new Promise(function (resolve, reject) {
+                _this2.request('/restaurants').then(function (data) {
+                    resolve(data);
+                    alert(data.city);
+                }).catch(function (error) {
+                    _this2.set('errorMessage', error);
+                    reject(error);
+                });
+            });
+        }
+
+        // Rest of the methods
+
+    });
 });
 define('ember-quickstart/services/sniffer', ['exports'], function (exports) {
   'use strict';
@@ -2491,7 +2907,7 @@ define("ember-quickstart/templates/components/popular-restaurants", ["exports"],
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "7nrCwW1l", "block": "{\"symbols\":[\"&default\"],\"statements\":[[11,1],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container popularLocations\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"col-xs-12\"],[7],[0,\"\\n      \"],[6,\"h3\"],[9,\"class\",\"section-title\"],[7],[0,\"Popular for Lunch Today\"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \\n\\n  \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \\n  \\n    \"],[6,\"div\"],[9,\"class\",\"col-xs-6 col-sm-3 location\"],[7],[0,\"\\n     \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0;  \"],[7],[0,\"\\n     \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/spicy.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n     \"],[6,\"h5\"],[7],[0,\" Restaurant Name\"],[8],[0,\"\\n      \"],[6,\"p\"],[9,\"class\",\"location-city-name\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"rating\"],[7],[0,\"\\n\\n\\n\\t\\t\\t\"],[6,\"fieldset\"],[9,\"class\",\"rating\"],[7],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star5\"],[9,\"name\",\"rating\"],[9,\"value\",\"5\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star5\"],[9,\"title\",\"Great - 5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star4half\"],[9,\"name\",\"rating\"],[9,\"value\",\"4 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star4half\"],[9,\"title\",\"Pretty good - 4.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star4\"],[9,\"name\",\"rating\"],[9,\"value\",\"4\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star4\"],[9,\"title\",\"Pretty good - 4 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star3half\"],[9,\"name\",\"rating\"],[9,\"value\",\"3 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star3half\"],[9,\"title\",\"Good - 3.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star3\"],[9,\"name\",\"rating\"],[9,\"value\",\"3\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star3\"],[9,\"title\",\"Good - 3 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star2half\"],[9,\"name\",\"rating\"],[9,\"value\",\"2 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star2half\"],[9,\"title\",\"Could be better - 2.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star2\"],[9,\"name\",\"rating\"],[9,\"value\",\"2\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star2\"],[9,\"title\",\"Could be better - 2 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star1half\"],[9,\"name\",\"rating\"],[9,\"value\",\"1 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star1half\"],[9,\"title\",\"Not so good - 1.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star1\"],[9,\"name\",\"rating\"],[9,\"value\",\"1\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star1\"],[9,\"title\",\"Bad- 1 star\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"starhalf\"],[9,\"name\",\"rating\"],[9,\"value\",\"half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"starhalf\"],[9,\"title\",\"Bad - 0.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t\"],[8],[0,\"\\n\"],[8],[0,\"\\n        \\n      \"],[8],[0,\"\\n     \\n       \"],[6,\"input\"],[9,\"type\",\"submit\"],[9,\"value\",\"Reserve now\"],[9,\"class\",\"btn  btn-reg\"],[9,\"style\",\"width:100%\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\\n  \\n\"],[8]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/components/popular-restaurants.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "8M4dmG3/", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"popularLocations\"],[7],[0,\"\\n\\n  \\n  \"],[6,\"div\"],[9,\"class\",\"komponenta\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"col-md-3 col-xs-6 col-sm-3\"],[9,\"id\",\"komp\"],[7],[0,\"\\n     \"],[6,\"div\"],[9,\"style\",\"float:left; margin: 0; padding: 0;  \"],[7],[0,\"\\n     \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/spicy.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n     \"],[6,\"h5\"],[7],[0,\" Restaurant Name\"],[8],[0,\"\\n      \"],[6,\"p\"],[9,\"class\",\"location-city-name\"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"rating\"],[7],[0,\"\\n\\n\\n\\t\\t\\t\"],[6,\"fieldset\"],[9,\"class\",\"rating\"],[7],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star5\"],[9,\"name\",\"rating\"],[9,\"value\",\"5\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star5\"],[9,\"title\",\"Great - 5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star4half\"],[9,\"name\",\"rating\"],[9,\"value\",\"4 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star4half\"],[9,\"title\",\"Pretty good - 4.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star4\"],[9,\"name\",\"rating\"],[9,\"value\",\"4\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star4\"],[9,\"title\",\"Pretty good - 4 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star3half\"],[9,\"name\",\"rating\"],[9,\"value\",\"3 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star3half\"],[9,\"title\",\"Good - 3.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star3\"],[9,\"name\",\"rating\"],[9,\"value\",\"3\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star3\"],[9,\"title\",\"Good - 3 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star2half\"],[9,\"name\",\"rating\"],[9,\"value\",\"2 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star2half\"],[9,\"title\",\"Could be better - 2.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star2\"],[9,\"name\",\"rating\"],[9,\"value\",\"2\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star2\"],[9,\"title\",\"Could be better - 2 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star1half\"],[9,\"name\",\"rating\"],[9,\"value\",\"1 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star1half\"],[9,\"title\",\"Not so good - 1.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star1\"],[9,\"name\",\"rating\"],[9,\"value\",\"1\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star1\"],[9,\"title\",\"Bad- 1 star\"],[7],[8],[0,\"\\n\\t\\t\\t    \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"starhalf\"],[9,\"name\",\"rating\"],[9,\"value\",\"half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"starhalf\"],[9,\"title\",\"Bad - 0.5 stars\"],[7],[8],[0,\"\\n\\t\\t\\t\"],[8],[0,\"\\n\"],[8],[0,\"\\n        \\n      \"],[8],[0,\"\\n     \\n       \"],[6,\"input\"],[9,\"type\",\"submit\"],[9,\"value\",\"Reserve now\"],[9,\"class\",\"btn  btn-reg\"],[9,\"style\",\"width:100%\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n  \\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/components/popular-restaurants.hbs" } });
 });
 define("ember-quickstart/templates/components/restaurant-search", ["exports"], function (exports) {
   "use strict";
@@ -2499,7 +2915,7 @@ define("ember-quickstart/templates/components/restaurant-search", ["exports"], f
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "S8VsgOWY", "block": "{\"symbols\":[\"&default\"],\"statements\":[[11,1],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"search\"],[7],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0;\"],[7],[0,\" \"],[6,\"button\"],[9,\"class\",\"btn btn-default\"],[9,\"type\",\"submit\"],[7],[6,\"i\"],[9,\"class\",\"glyphicon glyphicon-search\"],[7],[8],[8],[8],[0,\"\\n\\n\\n  \\n  \\n\\n\\n\\n    \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"  \"],[6,\"input\"],[9,\"type\",\"text\"],[9,\"class\",\"form-control\"],[9,\"placeholder\",\"Location, Restaurant or Cousine\"],[9,\"aria-label\",\"Location, Restaurant or Cousine\"],[7],[8],[8],[0,\"\\n\\n\\n  \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"2 people\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[8],[0,\"\\n\\n\"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n\"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"date\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n\"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"Filter by\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n\\n\\n      \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-table\"],[9,\"id\",\"findTable\"],[7],[0,\"\\n            Find a table\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n\\n   \\n  \"],[8],[0,\"\\n \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/components/restaurant-search.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "VfEg4oUd", "block": "{\"symbols\":[\"&default\"],\"statements\":[[11,1],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"search\"],[7],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; margin-left:80px;\"],[7],[0,\" \"],[6,\"button\"],[9,\"class\",\"btn btn-default\"],[9,\"type\",\"submit\"],[7],[6,\"i\"],[9,\"class\",\"glyphicon glyphicon-search\"],[7],[8],[8],[8],[0,\"\\n\\n\\n    \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"  \"],[6,\"input\"],[9,\"type\",\"text\"],[9,\"class\",\"form-control\"],[9,\"placeholder\",\"Location, Restaurant or Cousine\"],[9,\"aria-label\",\"Location, Restaurant or Cousine\"],[7],[8],[8],[0,\"\\n\\n\\n  \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"2 people\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[8],[0,\"\\n\\n\"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n\"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"date\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n\"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"Filter by\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n\\n\\n      \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-table\"],[9,\"id\",\"findTable\"],[7],[0,\"\\n            Find a table\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n\\n   \\n  \"],[8],[0,\"\\n \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/components/restaurant-search.hbs" } });
 });
 define("ember-quickstart/templates/components/single-restaurant-popular", ["exports"], function (exports) {
   "use strict";
@@ -2523,7 +2939,7 @@ define("ember-quickstart/templates/home", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "Drd2WAB1", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false],[0,\"\\n\"],[2,\"-AVIGATION BAR\"],[0,\"\\n\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light bg-light \"],[7],[0,\"\\n\"],[6,\"header\"],[7],[0,\"\\n\\n    \"],[6,\"div\"],[9,\"id\",\"header\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"pozadina\"],[7],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n  \\n  \"],[6,\"li\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#AppName\"],[7],[0,\"AppName\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"class\",\"active\"],[9,\"href\",\"#Login\"],[7],[0,\"Login\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Restaurants\"],[7],[0,\"Restaurants\"],[8],[8],[0,\"\\n    \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Home\"],[7],[0,\"Home\"],[8],[8],[0,\"\\n \"],[6,\"div\"],[9,\"class\",\"naslov\"],[7],[0,\"\\n  \"],[6,\"h1\"],[7],[0,\" Make a free reservation \"],[8],[0,\"\\n  \"],[6,\"h5\"],[7],[0,\" Choose your table from 757 restaurants near you\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n  \"],[1,[18,\"restaurant-search\"],false],[0,\"\\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"popularRestaurants\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n\\n \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0;  \"],[7],[0,\"\\n\"],[1,[18,\"popular-restaurants\"],false],[0,\"\\n\"],[8],[0,\"\\n\\n  \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[1,[18,\"popular-restaurants\"],false],[8],[0,\"\\n\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\\n\\n\\n\"],[6,\"header\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"id\",\"carouselpasta\"],[7],[0,\"\\n     \"],[6,\"div\"],[9,\"class\",\"pozadina\"],[7],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"slike\"],[7],[0,\"\\n       \\n            \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n                \"],[6,\"div\"],[9,\"class\",\"col-xs-2\"],[9,\"id\",\"logo\"],[7],[0,\"\\n                    \\n                \"],[8],[0,\"\\n                \"],[6,\"div\"],[9,\"class\",\"col-xs-10\"],[9,\"id\",\"menu\"],[9,\"col-md-offset-0\",\"\"],[7],[0,\"\\n                \"],[6,\"div\"],[9,\"id\",\"specials\"],[7],[0,\"\\n                \\n                \"],[8],[0,\"\\n                 \"],[6,\"h4\"],[9,\"class\",\"text-center\"],[7],[0,\" Specials \"],[8],[0,\"\\n                    \"],[2,\"CAROUSEL\"],[0,\"\\n\\n\"],[4,\"carousel-container\",null,null,{\"statements\":[[4,\"carousel-body\",null,null,{\"statements\":[[4,\"carousel-item\",null,null,{\"statements\":[[0,\"\\n\\t\\t\\t\\t\\t\\t    \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/pizza.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n\\n\\t\\t\\t\\t\\t\\t    \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/spicy.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n\\n\\t\\t\\t\\t\\t\\t    \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/cupcake.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n\\t\\t\\t\\t\\t\\t    \\n\"]],\"parameters\":[]},null],[4,\"carousel-item\",null,null,{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t      \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/restoran-home.jpg\"]]],[9,\"class\",\"rounded\"],[7],[8],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"carousel-item\",null,null,{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t      Angularjs\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\t\\t\\t\\t\\t\\t \\n\"],[4,\"carousel-arrow\",null,[[\"direction\"],[\"left\"]],{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t      \"],[6,\"span\"],[9,\"class\",\"glyphicon glyphicon-arrow-left\"],[7],[8],[0,\"\\n\\n\"]],\"parameters\":[]},null],[4,\"carousel-arrow\",null,[[\"direction\",\"tagName\"],[\"right\",\"button\"]],{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t    Slide Right\\n\"]],\"parameters\":[]},null],[0,\"             \\n\\n\"]],\"parameters\":[]},null],[0,\"                \\n                  \"],[8],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"popularLocations\"],[7],[0,\"\\n\\n\"],[1,[18,\"popular-locations\"],false],[0,\"\\n\"],[8],[0,\"\\n\\n\\n \"],[6,\"div\"],[9,\"class\",\"card\"],[7],[0,\"\\n    \\n    \"],[6,\"div\"],[9,\"class\",\"card-block force-to-bottom\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n \"],[6,\"div\"],[9,\"class\",\"row \"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12 col-md-offset-0\"],[7],[0,\"\\n      \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[7],[6,\"a\"],[9,\"href\",\"#privacy\"],[7],[0,\"Privacy Policy\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"class\",\"term\"],[9,\"href\",\"#term\"],[7],[0,\"Term of use\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#sitemap\"],[7],[0,\"Sitemap\"],[8],[8],[0,\"\\n    \"],[6,\"li3\"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#mobile\"],[7],[0,\"Mobile Site\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"about\"],[9,\"href\",\"#about\"],[7],[0,\"About Us\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"blog\"],[9,\"href\",\"#blog\"],[7],[0,\"Blog\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"careers\"],[9,\"href\",\"#careers\"],[7],[0,\"Careers\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"press\"],[9,\"href\",\"#press\"],[7],[0,\"Press\"],[8],[8],[0,\"\\n     \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"add\"],[9,\"href\",\"#add\"],[7],[0,\"Advertise\"],[8],[8],[0,\"\\n\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n    \"],[8],[0,\"\\n  \"],[8]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/home.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "RfWmD60h", "block": "{\"symbols\":[\"loc\",\"restaurant\"],\"statements\":[[1,[18,\"outlet\"],false],[0,\"\\n\"],[2,\"-AVIGATION BAR\"],[0,\"\\n\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light bg-light \"],[7],[0,\"\\n\"],[6,\"header\"],[7],[0,\"\\n\\n    \"],[6,\"div\"],[9,\"id\",\"header\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"pozadina\"],[7],[8],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"maskHome\"],[7],[0,\"\\n \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n  \\n  \"],[6,\"li\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#AppName\"],[7],[0,\"AppName\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"class\",\"active\"],[9,\"href\",\"#Login\"],[7],[0,\"Login\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Restaurants\"],[7],[0,\"Restaurants\"],[8],[8],[0,\"\\n    \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Home\"],[7],[0,\"Home\"],[8],[8],[0,\"\\n \"],[6,\"div\"],[9,\"class\",\"naslov\"],[7],[0,\"\\n  \"],[6,\"h1\"],[7],[0,\" Make a free reservation \"],[8],[0,\"\\n  \"],[6,\"h5\"],[7],[0,\" Choose your table from 757 restaurants near you\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n  \"],[1,[18,\"restaurant-search\"],false],[0,\"\\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"popularRestaurants\"],[9,\"style\",\"margin-top: 280px;\"],[7],[0,\" \\n\\n  \"],[6,\"div\"],[9,\"class\",\"container-fluid\"],[9,\"id\",\"popularRest\"],[7],[0,\"\\n\"],[4,\"each\",[[19,0,[\"model\",\"restaurants\"]]],null,{\"statements\":[[0,\"   \"],[6,\"div\"],[9,\"style\",\"float: left; width: 33%; padding: 0px;\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"popularLocations\"],[9,\"style\",\"margin: 0px; width:33%; \"],[7],[0,\"\\n\\n  \\n  \"],[6,\"div\"],[9,\"class\",\"komponenta\"],[9,\"style\",\"margin-top: 50px;\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"col-md-3 col-xs-6 col-sm-3\"],[9,\"id\",\"komp\"],[7],[0,\"\\n     \"],[6,\"div\"],[9,\"style\",\"float:left; margin: 0; padding: 0; margin-bottom:0px; \"],[7],[0,\"\\n     \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/single-restaurant.jpeg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n     \"],[6,\"div\"],[9,\"style\",\"width: 100px; float:left;\"],[7],[0,\"\\n     \"],[6,\"h5\"],[9,\"style\",\"padding-left: 10px;\"],[7],[0,\" \"],[1,[19,2,[]],false],[8],[0,\"\\n     \"],[8],[0,\"\\n\\n     \\n     \\n      \"],[6,\"div\"],[9,\"class\",\"location-city-name\"],[9,\"style\",\"width:140px;  \"],[7],[0,\"\\n      \"],[6,\"div\"],[9,\"class\",\"rating\"],[9,\"style\",\"float: left;\"],[7],[0,\"\\n\\n\\n      \"],[6,\"div\"],[9,\"class\",\"rating\"],[9,\"style\",\"float:left; width:210px; \"],[7],[0,\"\\n      \\n\\n           \"],[6,\"div\"],[9,\"style\",\"float:right; margin-top: 5px; padding-left:10px;\"],[7],[0,\"\\n           \"],[6,\"h6\"],[7],[0,\" $$$$\"],[8],[0,\"\\n           \"],[8],[0,\"\\n            \"],[6,\"div\"],[9,\"style\",\" float:right; margin-top: 5px; padding-left:10px;\"],[7],[0,\"\\n           \"],[6,\"h6\"],[7],[0,\" (175)\"],[8],[0,\"\\n           \"],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star5\"],[9,\"name\",\"rating\"],[9,\"value\",\"5\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star5\"],[9,\"title\",\"Great - 5 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star4half\"],[9,\"name\",\"rating\"],[9,\"value\",\"4 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star4half\"],[9,\"title\",\"Pretty good - 4.5 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star4\"],[9,\"name\",\"rating\"],[9,\"value\",\"4\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star4\"],[9,\"title\",\"Pretty good - 4 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star3half\"],[9,\"name\",\"rating\"],[9,\"value\",\"3 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star3half\"],[9,\"title\",\"Good - 3.5 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star3\"],[9,\"name\",\"rating\"],[9,\"value\",\"3\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star3\"],[9,\"title\",\"Good - 3 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star2half\"],[9,\"name\",\"rating\"],[9,\"value\",\"2 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star2half\"],[9,\"title\",\"Could be better - 2.5 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star2\"],[9,\"name\",\"rating\"],[9,\"value\",\"2\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star2\"],[9,\"title\",\"Could be better - 2 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star1half\"],[9,\"name\",\"rating\"],[9,\"value\",\"1 and a half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"star1half\"],[9,\"title\",\"Not so good - 1.5 stars\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"star1\"],[9,\"name\",\"rating\"],[9,\"value\",\"1\"],[7],[8],[6,\"label\"],[9,\"class\",\"full\"],[9,\"for\",\"star1\"],[9,\"title\",\"Bad- 1 star\"],[7],[8],[0,\"\\n          \"],[6,\"input\"],[9,\"type\",\"radio\"],[9,\"id\",\"starhalf\"],[9,\"name\",\"rating\"],[9,\"value\",\"half\"],[7],[8],[6,\"label\"],[9,\"class\",\"half\"],[9,\"for\",\"starhalf\"],[9,\"title\",\"Bad - 0.5 stars\"],[7],[8],[0,\"\\n\\n           \"],[6,\"hr\"],[9,\"style\",\" display: block;margin-top: 0.5em;color: black; width:250px;border-style: inset;border-width: 1px; opacity:0.5;\"],[7],[8],[0,\" \\n\\n           \"],[6,\"h6\"],[9,\"style\",\"padding-top: 0px; opacity:0.7;\"],[7],[0,\" Italian | International | Mediterranean\"],[8],[0,\"\\n      \"],[8],[0,\"\\n\\n\"],[8],[0,\"\\n\\n\\n        \\n      \"],[8],[0,\"\\n     \\n       \"],[6,\"input\"],[9,\"type\",\"submit\"],[9,\"value\",\"Reserve now\"],[9,\"class\",\"btn  btn-reg\"],[9,\"style\",\"width:100%\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n  \\n    \"],[8],[0,\"\\n\"]],\"parameters\":[2]},null],[0,\"    \\n \\n \"],[8],[0,\"\\n\\n\"],[8],[0,\"\\n\\n\\n\\n\\n\\n\\n\"],[6,\"header\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"id\",\"carouselpasta\"],[7],[0,\"\\n     \"],[6,\"div\"],[9,\"class\",\"pozadina\"],[7],[8],[0,\"\\n     \"],[6,\"div\"],[9,\"class\",\"maskCarousel\"],[7],[0,\"\\n \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"slike\"],[7],[0,\"\\n       \\n            \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n                \"],[6,\"div\"],[9,\"class\",\"col-xs-2\"],[9,\"id\",\"logo\"],[7],[0,\"\\n                    \\n                \"],[8],[0,\"\\n                \"],[6,\"div\"],[9,\"class\",\"col-xs-10\"],[9,\"id\",\"menu\"],[9,\"col-md-offset-0\",\"\"],[7],[0,\"\\n                \"],[6,\"div\"],[9,\"id\",\"specials\"],[7],[0,\"\\n                \\n                \"],[8],[0,\"\\n                 \"],[6,\"h4\"],[9,\"class\",\"text-center\"],[7],[0,\" Specials \"],[8],[0,\"\\n                    \"],[2,\"CAROUSEL\"],[0,\"\\n\\n\"],[4,\"carousel-container\",null,null,{\"statements\":[[4,\"carousel-body\",null,null,{\"statements\":[[4,\"carousel-item\",null,null,{\"statements\":[[0,\"\\n\\t\\t\\t\\t\\t\\t    \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/pizza.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n\\n\\t\\t\\t\\t\\t\\t    \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/spicy.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n\\n\\t\\t\\t\\t\\t\\t    \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/cupcake.jpg\"]]],[9,\"class\",\"rounded\"],[9,\"id\",\"boja\"],[7],[8],[0,\"\\n\\t\\t\\t\\t\\t\\t    \\n\"]],\"parameters\":[]},null],[4,\"carousel-item\",null,null,{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t      \"],[6,\"img\"],[10,\"src\",[26,[[25,\"unbound\",[[19,0,[\"relativePath\"]]],null],\"assets/restoran-home.jpg\"]]],[9,\"class\",\"rounded\"],[7],[8],[0,\"\\n\"]],\"parameters\":[]},null],[4,\"carousel-item\",null,null,{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t      Angularjs\\n\"]],\"parameters\":[]},null]],\"parameters\":[]},null],[0,\"\\t\\t\\t\\t\\t\\t \\n\"],[4,\"carousel-arrow\",null,[[\"direction\"],[\"left\"]],{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t      \"],[6,\"span\"],[9,\"class\",\"glyphicon glyphicon-arrow-left\"],[7],[8],[0,\"\\n\\n\"]],\"parameters\":[]},null],[4,\"carousel-arrow\",null,[[\"direction\",\"tagName\"],[\"right\",\"button\"]],{\"statements\":[[0,\"\\t\\t\\t\\t\\t\\t    Slide Right\\n\"]],\"parameters\":[]},null],[0,\"             \\n\\n\"]],\"parameters\":[]},null],[0,\"                \\n                  \"],[8],[0,\"\\n            \"],[8],[0,\"\\n        \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"popularLocations\"],[7],[0,\"\\n\\n\\n\"],[6,\"h4\"],[7],[0,\" Popular locations\"],[8],[0,\"\\n\"],[4,\"each\",[[19,0,[\"model\",\"locations\"]]],null,{\"statements\":[[6,\"h5\"],[9,\"id\",\"city\"],[7],[0,\" \"],[1,[19,1,[]],false],[8],[0,\"\\n\"]],\"parameters\":[1]},null],[6,\"a\"],[3,\"action\",[[19,0,[]],\"refreshModel\"]],[7],[0,\"OSVJEYI MODDEL\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n \"],[6,\"div\"],[9,\"class\",\"card\"],[7],[0,\"\\n    \\n    \"],[6,\"div\"],[9,\"class\",\"card-block force-to-bottom\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n \"],[6,\"div\"],[9,\"class\",\"row \"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12 col-md-offset-0\"],[7],[0,\"\\n      \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[7],[6,\"a\"],[9,\"href\",\"#privacy\"],[7],[0,\"Privacy Policy\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"class\",\"term\"],[9,\"href\",\"#term\"],[7],[0,\"Term of use\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#sitemap\"],[7],[0,\"Sitemap\"],[8],[8],[0,\"\\n    \"],[6,\"li3\"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#mobile\"],[7],[0,\"Mobile Site\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"about\"],[9,\"href\",\"#about\"],[7],[0,\"About Us\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"blog\"],[9,\"href\",\"#blog\"],[7],[0,\"Blog\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"careers\"],[9,\"href\",\"#careers\"],[7],[0,\"Careers\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"press\"],[9,\"href\",\"#press\"],[7],[0,\"Press\"],[8],[8],[0,\"\\n     \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"add\"],[9,\"href\",\"#add\"],[7],[0,\"Advertise\"],[8],[8],[0,\"\\n\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n    \"],[8],[0,\"\\n  \"],[8]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/home.hbs" } });
 });
 define("ember-quickstart/templates/index", ["exports"], function (exports) {
   "use strict";
@@ -2532,6 +2948,14 @@ define("ember-quickstart/templates/index", ["exports"], function (exports) {
     value: true
   });
   exports.default = Ember.HTMLBars.template({ "id": "XcONINVe", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/index.hbs" } });
+});
+define("ember-quickstart/templates/location", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "WLj1rCb+", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/location.hbs" } });
 });
 define("ember-quickstart/templates/popular-restaurants", ["exports"], function (exports) {
   "use strict";
@@ -2547,7 +2971,7 @@ define("ember-quickstart/templates/restaurant", ["exports"], function (exports) 
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "oIcb8PZM", "block": "{\"symbols\":[],\"statements\":[[1,[18,\"outlet\"],false],[0,\"\\n\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light bg-light \"],[7],[0,\"\\n\"],[6,\"header\"],[7],[0,\"\\n\\n    \"],[6,\"div\"],[9,\"id\",\"header\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"pozadina\"],[7],[0,\" \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n  \\n  \"],[6,\"li\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#AppName\"],[7],[0,\"AppName\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"class\",\"active\"],[9,\"href\",\"#Login\"],[7],[0,\"Login\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Restaurants\"],[7],[0,\"Restaurants\"],[8],[8],[0,\"\\n    \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Home\"],[7],[0,\"Home\"],[8],[8],[0,\"\\n \"],[6,\"div\"],[9,\"class\",\"naslov\"],[7],[0,\"\\n \\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n  \\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \\n\\n  \\t\"],[6,\"div\"],[9,\"class\",\"thm\"],[9,\"id\",\"thumbnail\"],[7],[0,\"\\n  \\t\\t\\n   \"],[6,\"img\"],[9,\"src\",\"assets/spicy.jpg\"],[9,\"class\",\"img\"],[9,\"width\",\"210\"],[9,\"height\",\"182\"],[9,\"float\",\"left\"],[7],[8],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"Name\"],[7],[0,\"\\n  \\t \"],[6,\"div\"],[9,\"class\",\"col-md-5 col-sm-12 col-xs-12\"],[9,\"id\",\"tableName\"],[7],[0,\"\\n  \\t \\t\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"id\",\"upper\"],[7],[0,\"\\n   \"],[6,\"h3\"],[7],[0,\"Restaurant Name\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"id\",\"lower\"],[7],[0,\"\\n   \"],[6,\"h6\"],[7],[0,\"Italian | International | Mediterranean \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n\\t \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n\\t \\t\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#Reservation\"],[7],[0,\"Reservation\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\t \\t\\t\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#About\"],[7],[0,\"About\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\t \\t\\t\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#Menu\"],[7],[0,\"Menu\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\t \\t\\t\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#Photos\"],[7],[0,\"Photos\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\n\\t \"],[8],[0,\"\\n\\t\"],[8],[0,\"\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"makeReservation\"],[7],[0,\"\\n\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"Make a free reservation\"],[8],[0,\"\\n\\n\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"map\"],[7],[0,\"\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"About RestaurantName\"],[8],[0,\"\\n\\t\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"menu\"],[7],[0,\"\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"Menu:\"],[8],[0,\"\\n\\t\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"photos\"],[7],[0,\"\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"Restaurant photos: \"],[8],[0,\"\\n\\t\"],[8],[0,\"\\n\\n\"],[1,[18,\"page-footer\"],false],[0,\"\\n\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/restaurant.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "VoD9gvqu", "block": "{\"symbols\":[\"context\"],\"statements\":[[1,[18,\"outlet\"],false],[0,\"\\n\\n\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light bg-light \"],[7],[0,\"\\n\"],[6,\"header\"],[7],[0,\"\\n\\n    \"],[6,\"div\"],[9,\"id\",\"header\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"pozadinaRestaurant\"],[7],[0,\"\\n   \\n     \"],[8],[0,\"\\n       \"],[6,\"div\"],[9,\"class\",\"mask\"],[7],[0,\"\\n \"],[8],[0,\"\\n        \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n  \\n  \"],[6,\"li\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#AppName\"],[7],[0,\"AppName\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"class\",\"active\"],[9,\"href\",\"#Login\"],[7],[0,\"Login\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Restaurants\"],[7],[0,\"Restaurants\"],[8],[8],[0,\"\\n    \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Home\"],[7],[0,\"Home\"],[8],[8],[0,\"\\n \"],[6,\"div\"],[9,\"class\",\"naslov\"],[7],[0,\"\\n \\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n  \\n    \"],[8],[0,\"\\n  \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\\n \\n\\n  \\t\"],[6,\"div\"],[9,\"class\",\"thm\"],[9,\"id\",\"thumbnail\"],[7],[0,\"\\n  \\t\\t\\n   \"],[6,\"img\"],[9,\"src\",\"assets/single-restaurant.jpeg\"],[9,\"class\",\"img\"],[9,\"width\",\"210\"],[9,\"height\",\"182\"],[9,\"float\",\"left\"],[7],[8],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"Name\"],[7],[0,\"\\n  \\t \"],[6,\"div\"],[9,\"class\",\"col-md-5 col-sm-12 col-xs-12\"],[9,\"id\",\"tableName\"],[7],[0,\"\\n  \\t \\t\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"id\",\"upper\"],[7],[0,\"\\n   \"],[6,\"h3\"],[7],[0,\"Restaurant Name\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"id\",\"lower\"],[7],[0,\"\\n   \"],[6,\"h6\"],[7],[0,\"Italian | International | Mediterranean \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\"\\n\\t \"],[6,\"div\"],[9,\"class\",\"col-md-3 col-sm-12 col-xs-12\"],[9,\"style\",\"margin-left: 100px; opacity: 0.3; font-weight: bold; \"],[7],[0,\"\\n\\t \\t\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"style\",\"margin-top: 30px;\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#Reservation\"],[7],[0,\"Reservation\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\t \\t\\t\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"style\",\"margin-top: 16px;\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#About\"],[7],[0,\"About\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\t \\t\\t\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"style\",\"margin-top: 16px;\"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#Menu\"],[7],[0,\"Menu\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\t \\t\\t\"],[6,\"div\"],[9,\"class\",\"row\"],[9,\"style\",\"margin-top: 16px;  \"],[7],[0,\"\\n\\t \\t\\t\"],[6,\"a\"],[9,\"href\",\"#Photos\"],[7],[0,\"Photos\"],[8],[0,\"\\n\\t \\t\"],[8],[0,\"\\n\\n\\t \"],[8],[0,\"\\n\\t\"],[8],[0,\"\\n\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"makeReservation\"],[7],[0,\"\\n\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"Make a free reservation\"],[8],[0,\"\\n\\t\"],[6,\"div\"],[9,\"class\",\"searchInRestaurant\"],[7],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept2\"],[7],[0,\"2 people\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[8],[0,\"\\n\\n        \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n\"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"date\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n\"],[8],[0,\"\\n\"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n\"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-default dropdown-toggle\"],[9,\"data-toggle\",\"dropdown\"],[7],[0,\"\\n            \"],[6,\"span\"],[9,\"id\",\"search_concept\"],[7],[0,\"7:00 PM\"],[8],[0,\" \"],[6,\"span\"],[9,\"class\",\"caret\"],[7],[8],[0,\"\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n\\n\\n      \"],[6,\"li\"],[9,\"style\",\"float:left; margin: 0; padding: 0; border: 0; \"],[7],[0,\"\\n      \"],[6,\"button\"],[9,\"type\",\"button\"],[9,\"class\",\"btn btn-table\"],[9,\"id\",\"findTable\"],[7],[0,\"\\n            Find a table\\n        \"],[8],[0,\"\\n      \"],[8],[0,\"\\n    \"],[8],[0,\"\\n\\t\\n \"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"map\"],[7],[0,\"\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"About RestaurantName\"],[8],[0,\"\\n\"],[4,\"g-map\",null,[[\"markersFitMode\"],[\"live\"]],{\"statements\":[[0,\"  \"],[1,[25,\"g-map-marker\",[[19,1,[]]],[[\"lat\",\"lng\"],[37.7933,-122.4167]]],false],[0,\"\\n  \"],[1,[25,\"g-map-marker\",[[19,1,[]]],[[\"lat\",\"lng\"],[37.7833,-122.4267]]],false],[0,\"\\n  \"],[1,[25,\"g-map-marker\",[[19,1,[]]],[[\"lat\",\"lng\"],[37.7733,-122.4067]]],false],[0,\"\\n\"]],\"parameters\":[1]},null],[0,\"\\t\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"Restmenu\"],[7],[0,\"\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"Menu:\"],[8],[0,\"\\n\\t\"],[8],[0,\"\\n\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[9,\"id\",\"Restphotos\"],[7],[0,\"\\n\\t\"],[6,\"h5\"],[9,\"id\",\"make\"],[7],[0,\"Restaurant photos: \"],[8],[0,\"\\n\\t\"],[6,\"img\"],[9,\"src\",\"assets/spicy.jpg\"],[9,\"class\",\"rounded mx-auto d-block\"],[9,\"style\",\"height: 500px; width: 340px; display: inline-block; float: left;\"],[7],[8],[0,\"\\n\\n\\t\\t\"],[6,\"img\"],[9,\"src\",\"assets/spicy.jpg\"],[9,\"class\",\"rounded mx-auto d-block\"],[9,\"style\",\"height: 160px; width: 160px; display: inline-block; float: left;\"],[7],[8],[0,\"\\n\\t\\t\"],[6,\"img\"],[9,\"src\",\"assets/spicy.jpg\"],[9,\"class\",\"rounded mx-auto d-block\"],[9,\"style\",\"height: 160px; width: 160px; display: inline-block; float: left;\"],[7],[8],[0,\"\\n\\t\\t\"],[6,\"img\"],[9,\"src\",\"assets/spicy.jpg\"],[9,\"class\",\"rounded mx-auto d-block\"],[9,\"style\",\"height: 160px; width: 160px; display: inline-block; float: left;\"],[7],[8],[0,\"\\n\\n\\n\\n\\n\\t\"],[8],[0,\"\\n\\n\"],[1,[18,\"page-footer\"],false]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/restaurant.hbs" } });
 });
 define("ember-quickstart/templates/singin", ["exports"], function (exports) {
   "use strict";
@@ -2555,7 +2979,7 @@ define("ember-quickstart/templates/singin", ["exports"], function (exports) {
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "L2RsqFPP", "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\\n\"],[2,\"-AVIGATION BAR\"],[0,\"\\n\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light bg-light \"],[9,\"style\",\"background: white\"],[7],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n  \\n  \"],[6,\"li\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#AppName\"],[7],[0,\"AppName\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"class\",\"active\"],[9,\"href\",\"#Login\"],[7],[0,\"Login\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Restaurants\"],[7],[0,\"Restaurants\"],[8],[8],[0,\"\\n    \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Home\"],[7],[0,\"Home\"],[8],[8],[0,\"\\n\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n    \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n\\n\\n\"],[2,\"-ogin\"],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-4 col-sm-12 col-xs-12 col-md-offset-4\"],[7],[0,\"\\n     \"],[6,\"div\"],[9,\"id\",\"forma\"],[7],[0,\"\\n  \"],[6,\"h3\"],[7],[0,\" Login\"],[8],[0,\"\\n  \"],[6,\"a\"],[9,\"href\",\"#\"],[9,\"class\",\"login-link\"],[9,\"style\",\"color: #E57373!\"],[7],[0,\" \"],[4,\"link-to\",[\"singup\"],null,{\"statements\":[[0,\"Create Account \"]],\"parameters\":[]},null],[8],[0,\"\\n  \\n      \"],[6,\"div\"],[9,\"class\",\"clearfix\"],[7],[8],[0,\"\\n\\n      \"],[6,\"form\"],[9,\"action\",\"/api/v1/register\"],[9,\"method\",\"POST\"],[9,\"class\",\"register-forma\"],[7],[0,\"\\n         \\n        \"],[6,\"div\"],[9,\"class\",\"form-group\"],[7],[0,\"\\n          \"],[1,[25,\"input\",null,[[\"type\",\"class\",\"placeholder\",\"value\"],[\"email\",\"form-control\",\"Email\",[19,0,[\"email\"]]]]],false],[0,\"\\n        \"],[8],[0,\"\\n      \\n      \"],[6,\"div\"],[9,\"class\",\"form-group\"],[7],[0,\"\\n          \"],[1,[25,\"input\",null,[[\"type\",\"class\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"Password\",[19,0,[\"password\"]]]]],false],[0,\"\\n        \"],[8],[0,\"\\n      \\n        \\n        \"],[6,\"button\"],[9,\"type\",\"submit\"],[9,\"class\",\"btn btn-danger btn-reg\"],[9,\"style\",\"width:100%\"],[3,\"action\",[[19,0,[]],\"login\"]],[7],[0,\"Login\"],[8],[0,\"\\n\\n      \"],[8],[0,\"\\n\\n\\n\"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n    \\n\\n\\n\"],[8],[0,\"\\n\\n\\n \"],[6,\"div\"],[9,\"class\",\"footer\"],[7],[0,\"\\n \"],[6,\"div\"],[9,\"class\",\"card\"],[7],[0,\"\\n    \\n    \"],[6,\"div\"],[9,\"class\",\"card-block force-to-bottom\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n \"],[6,\"div\"],[9,\"class\",\"row \"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12 col-md-offset-0\"],[7],[0,\"\\n      \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[7],[6,\"a\"],[9,\"href\",\"#privacy\"],[7],[0,\"Privacy Policy\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"class\",\"term\"],[9,\"href\",\"#term\"],[7],[0,\"Term of use\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#sitemap\"],[7],[0,\"Sitemap\"],[8],[8],[0,\"\\n    \"],[6,\"li3\"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#mobile\"],[7],[0,\"Mobile Site\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"about\"],[9,\"href\",\"#about\"],[7],[0,\"About Us\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"blog\"],[9,\"href\",\"#blog\"],[7],[0,\"Blog\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"careers\"],[9,\"href\",\"#careers\"],[7],[0,\"Careers\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"press\"],[9,\"href\",\"#press\"],[7],[0,\"Press\"],[8],[8],[0,\"\\n     \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"add\"],[9,\"href\",\"#add\"],[7],[0,\"Advertise\"],[8],[8],[0,\"\\n\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n    \"],[8],[0,\"\\n      \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/singin.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "yYLkVAcm", "block": "{\"symbols\":[],\"statements\":[[0,\"\\n\"],[1,[18,\"outlet\"],false],[0,\"\\n\\n\\n\"],[2,\"-AVIGATION BAR\"],[0,\"\\n\\n\"],[6,\"nav\"],[9,\"class\",\"navbar navbar-expand-lg navbar-light bg-light \"],[9,\"style\",\"background: white\"],[7],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n \"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12\"],[7],[0,\"\\n  \\n  \"],[6,\"li\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#AppName\"],[7],[0,\"AppName\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"class\",\"active\"],[9,\"href\",\"#Login\"],[7],[0,\"Login\"],[8],[8],[0,\"\\n  \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Restaurants\"],[7],[0,\"Restaurants\"],[8],[8],[0,\"\\n    \"],[6,\"li\"],[9,\"style\",\"float:right \"],[7],[6,\"a\"],[9,\"href\",\"#Home\"],[7],[0,\"Home\"],[8],[8],[0,\"\\n\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n    \\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n\\n \\n\\n\"],[2,\"-ogin\"],[0,\"\\n\"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n\"],[6,\"div\"],[9,\"class\",\"row\"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-4 col-sm-12 col-xs-12 col-md-offset-4\"],[7],[0,\"\\n     \"],[6,\"div\"],[9,\"id\",\"forma\"],[7],[0,\"\\n  \"],[6,\"h3\"],[7],[0,\" Login\"],[8],[0,\"\\n  \"],[6,\"a\"],[9,\"href\",\"#\"],[9,\"class\",\"login-link\"],[9,\"style\",\"color: #E57373!\"],[7],[0,\" \"],[4,\"link-to\",[\"singup\"],null,{\"statements\":[[0,\"Create Account \"]],\"parameters\":[]},null],[8],[0,\"\\n  \\n      \"],[6,\"div\"],[9,\"class\",\"clearfix\"],[7],[8],[0,\"\\n\\n      \"],[6,\"form\"],[9,\"action\",\"singin.hbs\"],[9,\"method\",\"POST\"],[9,\"class\",\"register-forma\"],[9,\"onsubmit\",\"return Validate()\"],[9,\"name\",\"vform\"],[7],[0,\"\\n         \\n        \"],[6,\"div\"],[9,\"class\",\"form-group\"],[7],[0,\"\\n         \"],[1,[25,\"input\",null,[[\"type\",\"id\",\"class\",\"placeholder\",\"value\",\"required\"],[\"email\",\"email\",\"form-control\",\"Email\",[19,0,[\"email\"]],true]]],false],[0,\"\\n\\n        \"],[8],[0,\"\\n      \\n      \"],[6,\"div\"],[9,\"class\",\"form-group\"],[7],[0,\"\\n          \"],[1,[25,\"input\",null,[[\"type\",\"class\",\"placeholder\",\"value\"],[\"password\",\"form-control\",\"Password\",[19,0,[\"password\"]]]]],false],[0,\"\\n        \"],[8],[0,\"\\n      \\n        \\n        \"],[6,\"button\"],[9,\"type\",\"submit\"],[9,\"class\",\"btn btn-danger btn-reg\"],[9,\"style\",\"width:100%\"],[3,\"action\",[[19,0,[]],\"login\"]],[7],[0,\"Login\"],[8],[0,\"\\n\\n      \"],[8],[0,\"\\n\\n\\n\"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"],[8],[0,\"\\n    \\n\\n\\n\"],[8],[0,\"\\n\\n\\n \"],[6,\"div\"],[9,\"class\",\"footer\"],[7],[0,\"\\n \"],[6,\"div\"],[9,\"class\",\"card\"],[7],[0,\"\\n    \\n    \"],[6,\"div\"],[9,\"class\",\"card-block force-to-bottom\"],[7],[0,\"\\n    \"],[6,\"div\"],[9,\"class\",\"container\"],[7],[0,\" \\n \"],[6,\"div\"],[9,\"class\",\"row \"],[7],[0,\"\\n  \"],[6,\"div\"],[9,\"class\",\"col-md-12 col-sm-12 col-xs-12 col-md-offset-0\"],[7],[0,\"\\n      \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[7],[6,\"a\"],[9,\"href\",\"#privacy\"],[7],[0,\"Privacy Policy\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"class\",\"term\"],[9,\"href\",\"#term\"],[7],[0,\"Term of use\"],[8],[8],[0,\"\\n  \"],[6,\"li3\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#sitemap\"],[7],[0,\"Sitemap\"],[8],[8],[0,\"\\n    \"],[6,\"li3\"],[9,\"small\",\"\"],[9,\"class\",\"text-muted\"],[9,\"style\",\"float:left \"],[7],[6,\"a\"],[9,\"href\",\"#mobile\"],[7],[0,\"Mobile Site\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"about\"],[9,\"href\",\"#about\"],[7],[0,\"About Us\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"blog\"],[9,\"href\",\"#blog\"],[7],[0,\"Blog\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"careers\"],[9,\"href\",\"#careers\"],[7],[0,\"Careers\"],[8],[8],[0,\"\\n    \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"press\"],[9,\"href\",\"#press\"],[7],[0,\"Press\"],[8],[8],[0,\"\\n     \"],[6,\"li2\"],[9,\"style\",\"float:right\"],[7],[6,\"a\"],[9,\"class\",\"add\"],[9,\"href\",\"#add\"],[7],[0,\"Advertise\"],[8],[8],[0,\"\\n\"],[8],[0,\"\\n  \"],[8],[0,\"\\n  \"],[8],[0,\"\\n \\n    \"],[8],[0,\"\\n      \"],[8],[0,\"\\n  \"],[8],[0,\"\\n\"]],\"hasEval\":false}", "meta": { "moduleName": "ember-quickstart/templates/singin.hbs" } });
 });
 define("ember-quickstart/templates/singup", ["exports"], function (exports) {
   "use strict";
@@ -2575,6 +2999,45 @@ define('ember-quickstart/utils/clamp', ['exports', 'ember-paper/utils/clamp'], f
     enumerable: true,
     get: function () {
       return _clamp.default;
+    }
+  });
+});
+define('ember-quickstart/utils/g-maps/child-collection', ['exports', 'ember-cli-g-maps/utils/g-maps/child-collection'], function (exports, _childCollection) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _childCollection.default;
+    }
+  });
+});
+define('ember-quickstart/utils/g-maps/math', ['exports', 'ember-cli-g-maps/utils/g-maps/math'], function (exports, _math) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _math.default;
+    }
+  });
+});
+define('ember-quickstart/utils/load-google-maps', ['exports', 'ember-cli-g-maps/utils/load-google-maps'], function (exports, _loadGoogleMaps) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, 'default', {
+    enumerable: true,
+    get: function () {
+      return _loadGoogleMaps.default;
     }
   });
 });
@@ -2600,6 +3063,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+6158b1a2"});
+  require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+a7e821f1"});
 }
 //# sourceMappingURL=ember-quickstart.map

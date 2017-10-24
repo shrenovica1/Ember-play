@@ -4,6 +4,7 @@ body{
 
 }
 
+
  
 #forma{
  margin-top: 15px;
@@ -70,6 +71,7 @@ padding-top: 70px;
   border-radius:0!important;
   border-color: white!important;
   height: 56px;
+
   color: black!important;
   
   }
@@ -192,13 +194,43 @@ li3{
 
   
    .pozadina{
-     background-image: url("restoran-home.jpg");
-   opacity: 0.7;
+     background-image: url("restoran-home.png");
+   opacity: 0.8;
    height: 680px;
    width: 100%;
     background-size: cover;
    position: absolute;
 
+   }
+   .pozadinaRestaurant{
+    background-image: url("restoran-home.png");
+
+   opacity: 0.8;
+   height: 340px;
+   width: 100%;
+    background-size: cover;
+   position: absolute;
+
+   
+   }
+
+   .mask{
+
+    width: 100%;
+    position: absolute;
+    background: black;
+    opacity: 0.7;
+    width: 100%;
+     height: 340px;
+   }
+   .maskHome{
+
+    width: 100%;
+    position: absolute;
+    background: black;
+    opacity: 0.6;
+    width: 100%;
+     height: 680px;
    }
   
  
@@ -245,6 +277,15 @@ background-image: url("pasta.jpg");
    position: absolute;
 
    }
+   .maskCarousel{
+
+    width: 100%;
+    position: absolute;
+    background: black;
+    opacity: 0.5;
+    width: 100%;
+     height: 584px;
+   }
     
     width: 100%;
     
@@ -281,14 +322,32 @@ padding: 5px;
 .popularRestaurants{
   margin-top: -120px;
   margin-bottom: 90px;
+  display: inline-block !important;
+
+}
+#popularRestaurants{
+  padding-left: 70px; 
+  margin-bottom: 90px;
+  }
+
+#popularRest{
+display: inline-block !important;
+  //padding: 0px 0px;
+}
+#komp{
+display: inline-block !important;
+ // padding: 0px 60px;
 }
 
 .popularLocations{
   h3{
   alignment: center;
   }
+  display: inline-block !important;
   margin-top: 220px;
   margin-bottom: 200px;
+  padding: 0px 0px;
+  margin-right: 0px;
 }
 
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
@@ -300,6 +359,8 @@ padding: 5px;
 .rating { 
   border: none;
   float: left;
+   
+   margin-bottom: 10px;
 }
 
 .rating > input { display: none; } 
@@ -352,14 +413,16 @@ padding: 5px;
 }
 
 .thm{
-  margin-top: 450px;
+  margin-top: 120px;
+  margin-left: 75px;
   float:left;
 }
 
-.thm h6,h3{
+.thm {
+h6,h3{
   float:right;
   display: inline-block;
-
+}
 }
 
 #tableName{
@@ -379,7 +442,7 @@ padding: 5px;
   color: white;
 }
 
-#makeReservation{
+  #makeReservation{
   position: center;
   background-color: white;
   height: 180px;
@@ -389,12 +452,47 @@ padding: 5px;
 
   #make{
   position: absolute;
-   height: 180px;
+  margin-top: 25px;
   width:700px;
+  opacity:0.5;
+  margin-left: 15px;
   
   }
 
+  #search_concept2{
+  margin-top:70px;
+  }
+  .btn-default{
+  margin-top: 70px;
+  border-radius: 0 !important;
+  font-weight: bold;
+  width: 160px;
+  height: 56px;
+  }
+
+ .btn-table{ 
+  margin-top: 70px;
+ height: 56px;
+ width: 163px;
+ border-radius: 0!important;
+ color: white!important;
+  background-color: #fd6f60;
+  opacity: 1;
+  }
+
+  .searchInRestaurant{
+  margin-left: 15px;
+  }
+}
+
+#make{
   
+  margin-top: 25px;
+  opacity:0.5;
+  margin-left: 15px;
+}
+#makeReservation{
+  margin-top: -170px;
 }
   #map{
   height: 667px;
@@ -405,7 +503,7 @@ padding: 5px;
     margin-right: 250px;
   }
 
-  #menu{
+  #Restmenu{
   height: 660px;
   width:700px;
   position: center;
@@ -414,7 +512,7 @@ padding: 5px;
     margin-right: 250px;
   }
 
-   #photos{
+   #Restphotos{
   height: 583px;
   width:700px;
   position: center;

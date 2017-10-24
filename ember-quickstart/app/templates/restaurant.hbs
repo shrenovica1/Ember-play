@@ -1,10 +1,15 @@
 {{outlet}}
 
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light " >
 <header>
 
     <div id="header">
-    <div class="pozadina"> </div>
+    <div class="pozadinaRestaurant">
+   
+     </div>
+       <div class="mask">
+ </div>
         <div class="container"> 
 
  <div class="row">
@@ -33,7 +38,7 @@
 
   	<div class="thm" id="thumbnail" >
   		
-   <img src="assets/spicy.jpg" class="img"  width="210" height="182" float="left">
+   <img src="assets/single-restaurant.jpeg" class="img"  width="210" height="182" float="left">
   <div class="container" id="Name">
   	 <div class="col-md-5 col-sm-12 col-xs-12" id="tableName">
   	 	<div class="row" id="upper">
@@ -52,17 +57,17 @@
 
 
 <div class="container">
-	 <div class="col-md-12 col-sm-12 col-xs-12">
-	 	<div class="row">
+	 <div class="col-md-3 col-sm-12 col-xs-12" style="margin-left: 100px; opacity: 0.3; font-weight: bold; ">
+	 	<div class="row" style="margin-top: 30px;">
 	 		<a href="#Reservation">Reservation</a>
 	 	</div>
-	 		<div class="row">
+	 		<div class="row"  style="margin-top: 16px;">
 	 		<a href="#About">About</a>
 	 	</div>
-	 		<div class="row">
+	 		<div class="row" style="margin-top: 16px;">
 	 		<a href="#Menu">Menu</a>
 	 	</div>
-	 		<div class="row">
+	 		<div class="row" style="margin-top: 16px;  ">
 	 		<a href="#Photos">Photos</a>
 	 	</div>
 
@@ -73,20 +78,56 @@
 <div class="container" id="makeReservation" >
 
 	<h5 id="make">Make a free reservation</h5>
+	<div class="searchInRestaurant">
+  <li style="float:left; margin: 0; padding: 0; border: 0; " ><button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span id="search_concept2">2 people</span> <span class="caret"></span>
+        </button></li>
 
-</div>
+        <li style="float:left; margin: 0; padding: 0; border: 0; " >
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span id="search_concept">date</span> <span class="caret"></span>
+        </button>
+</li>
+<li style="float:left; margin: 0; padding: 0; border: 0; " >
+<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+            <span id="search_concept">7:00 PM</span> <span class="caret"></span>
+        </button>
+      </li>
+
+
+      <li style="float:left; margin: 0; padding: 0; border: 0; " >
+      <button type="button" class="btn btn-table" id="findTable" >
+            Find a table
+        </button>
+      </li>
+    </div>
+	
+ </div>
 
 <div class="container" id="map">
 	<h5 id="make">About RestaurantName</h5>
+	{{#g-map markersFitMode='live' as |context|}}
+  {{g-map-marker context lat=37.7933 lng=-122.4167}}
+  {{g-map-marker context lat=37.7833 lng=-122.4267}}
+  {{g-map-marker context lat=37.7733 lng=-122.4067}}
+{{/g-map}}
 	</div>
 
-<div class="container" id="menu">
+<div class="container" id="Restmenu">
 	<h5 id="make">Menu:</h5>
 	</div>
 
-<div class="container" id="photos">
+<div class="container" id="Restphotos">
 	<h5 id="make">Restaurant photos: </h5>
+	<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 500px; width: 340px; display: inline-block; float: left;">
+
+		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left;">
+		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left;">
+		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left;">
+
+
+
+
 	</div>
 
 {{page-footer}}
-

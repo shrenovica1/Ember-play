@@ -12,8 +12,8 @@ POST     /singin                  controllers.UsersController.signin
 POST    /signout                  controllers.UsersController.logout
 
 
-
-
+GET     /location                  controllers.CityController.getAllCities
+GET     /restaurants               controllers.RestaurantController.getAllRestaurants
 
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index

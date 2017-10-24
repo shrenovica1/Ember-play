@@ -15,6 +15,7 @@ Router.map(function() {
   this.route('popular-restaurants');
 
   this.route('restaurant');
+  this.route('location');
 });
 
 export default Router;

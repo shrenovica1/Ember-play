@@ -20,7 +20,8 @@ libraryDependencies ++= Seq(
   "org.postgresql" % "postgresql" % "9.4-1206-jdbc42",
   javaJpa,
   "org.hibernate" % "hibernate-entitymanager" % "5.1.4.Final",
-  "com.amazonaws" % "aws-java-sdk" % "1.11.52"
+  "com.amazonaws" % "aws-java-sdk" % "1.11.52",
+"com.jason-goodwin" %% "authentikat-jwt" % "0.4.5"
 )
 routesGenerator := InjectedRoutesGenerator
 libraryDependencies ++= Seq(evolutions, jdbc)

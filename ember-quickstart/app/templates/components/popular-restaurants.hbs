@@ -1,18 +1,11 @@
-{{yield}}
+{{outlet}}
 
-<div class="container popularLocations">
-  <div class="row">
-    <div class="col-xs-12">
-      <h3 class="section-title">Popular for Lunch Today</h3>
-    </div>
-  </div>
-  
+<div class="container" id="popularLocations">
 
-  <div class="row">
   
-  
-    <div class="col-xs-6 col-sm-3 location">
-     <li style="float:left; margin: 0; padding: 0;  " >
+  <div class="komponenta">
+    <div class="col-md-3 col-xs-6 col-sm-3" id="komp">
+     <div style="float:left; margin: 0; padding: 0;  " >
      <img src="{{unbound relativePath}}assets/spicy.jpg" class="rounded" id= "boja">
      <h5> Restaurant Name</h5>
       <p class="location-city-name">
@@ -36,10 +29,9 @@
       </p>
      
        <input type="submit" value="Reserve now" class="btn  btn-reg" style="width:100%">
-        </li>
+        </div>
     </div>
   
   </div>
-
-  
 </div>
+  
