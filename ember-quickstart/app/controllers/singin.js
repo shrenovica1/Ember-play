@@ -33,7 +33,7 @@ export default Ember.Controller.extend({
         success : function (odg) {
           token=odg.token;
          // tokenCurrentUser=token
-          //alert(token);
+         // alert(response);
           //this.get('session').setToken(email,  password, odg.token);
          //this.get('session').setToken(email,  password, odg.token);
          // this.get('loginService').set('token', odg.token);

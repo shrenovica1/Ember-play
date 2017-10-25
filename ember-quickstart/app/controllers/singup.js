@@ -7,19 +7,7 @@ export default Ember.Controller.extend({
 
 
 	actions:{
-      /*   create() {
-               $.ajax( {
-
-               type: "POST",
-               url: "http://localhost:4200/singup",
-               data: {firstname: "Sanja"}
-
-          })
-          this.transitionToRoute('singin');
-          
-
-            
-            },*/
+     
              create() {
       var response = this.get('ajax').post('/singup', {
           contentType: 'application/json',
@@ -35,13 +23,21 @@ export default Ember.Controller.extend({
                              country: document.getElementById("exampleFormControlSelect2").value,
                              passwor:this.get('password'),
                              isAdmin: false}),
+         success : function (odg) {
+            // alert(odg);
+         }
       });
-      response.then(
-        () => this.transitionToRoute('home'),
-        (error) => {
-          this.set('hasError', true);
-          
+       response.then( () => {
+       // this.get('session').setToken(token);
+         //  
+        this.transitionToRoute('home')},
+         (error) => {
+          alert("Invalid form");
+           //alert("The server says: " + odg.token);
+        
         }
+         
+        
       );
     },
   

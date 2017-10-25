@@ -14,9 +14,9 @@
   <div class="col-md-12 col-sm-12 col-xs-12">
   
   <li style="float:left "><a href="#AppName">AppName</a></li>
-  <li style="float:right "><a class="active" href="#Login">Login</a></li>
-  <li style="float:right "><a href="#Restaurants">Restaurants</a></li>
-    <li style="float:right "><a href="#Home">Home</a></li>
+  <li style="float:right "><a class="active" href="/singin">Login</a></li>
+  <li style="float:right "><a href="/restaurants">Restaurants</a></li>
+    <li style="float:right "><a href="/home">Home</a></li>
  <div class="naslov">
   <h1> Make a free reservation </h1>
   <h5> Choose your table from 757 restaurants near you</h5>
@@ -35,6 +35,8 @@
 
   <div class="container" id="popularRestaurants" style="margin-top: 280px;"> 
 
+    <h4 style="position: center; margin-top: -42px; font-size: 30px;"> Popular for Lunch Today</h4>
+
   <div class="container-fluid" id="popularRest">
   {{#each model.restaurants as |restaurant|}}
    <div style="float: left; width: 33%; padding: 0px;">
@@ -45,7 +47,7 @@
     <div class="col-md-3 col-xs-6 col-sm-3" id="komp">
      <div style="float:left; margin: 0; padding: 0; margin-bottom:0px; " >
      <img src="{{unbound relativePath}}assets/single-restaurant.jpeg" class="rounded" id= "boja">
-     <div style="width: 100px; float:left;">
+     <div style=" float:left;">
      <h5 style="padding-left: 10px;" > {{restaurant}}</h5>
      </div>
 
@@ -111,28 +113,43 @@
      <div class="pozadina"></div>
      <div class="maskCarousel">
  </div>
-        <div class="container" id="slike">
+        <div class="container" id="slike" style="width:100%;">
        
-            <div class="row">
-                <div class ="col-xs-2" id="logo">
-                    
-                </div>
-                <div class ="col-xs-10" id="menu" col-md-offset-0>
+            
+                <div class ="col-md-12" id="menu" style="margin-left: -21px;" >
+
                 <div id="specials">
                 
                 </div>
-                 <h4 class="text-center"> Specials </h4>
+                 
                     <!--CAROUSEL-->
+                    <h4 class="text-center" style="position: center; color:white; font-weight: 300; font-size: 30px;">Specials </h4>
 
 						{{#carousel-container }}
+             <div class="col-md-12 col-sm-6" id="Carouseldiv" style="margin-top: 100px; display: inline-block;;">
 						  {{#carousel-body}}
+             <div id="leftArrow">
+              {{#carousel-arrow direction="left"}}
+                  <span class="glyphicon  glyphicon-menu-left"></span>
+             
+              {{/carousel-arrow}}
+               </div>
+
+
+               <div id="rightArrow">
+           {{#carousel-arrow direction="right" }}
+                 <span class="glyphicon glyphicon-menu-right"></span>
+              {{/carousel-arrow}}
+              </div>
+
+
 						    {{#carousel-item}}
 
-						    <img src="{{unbound relativePath}}assets/pizza.jpg" class="rounded" id= "boja">
+						    <img src="{{unbound relativePath}}assets/pizza.jpg" class="rounded" id= "boja1">
 
-						    <img src="{{unbound relativePath}}assets/spicy.jpg" class="rounded" id= "boja">
+						    <img src="{{unbound relativePath}}assets/spicy.jpg" class="rounded" id= "boja1">
 
-						    <img src="{{unbound relativePath}}assets/cupcake.jpg" class="rounded" id= "boja">
+						    <img src="{{unbound relativePath}}assets/cupcake.jpg" class="rounded" id= "boja1">
 						    
 						{{/carousel-item}}
 						    {{#carousel-item}}
@@ -141,43 +158,46 @@
 						    {{#carousel-item}}
 						      Angularjs
 						    {{/carousel-item}}
+                
+
 						  {{/carousel-body}}
 						 
-						  {{#carousel-arrow direction="left"}}
-						      <span class="glyphicon glyphicon-arrow-left"></span>
-
-						  {{/carousel-arrow}}
-						  {{#carousel-arrow direction="right" tagName="button"}}
-						    Slide Right
-						  {{/carousel-arrow}}
+						 
+						 
+              </div>
              
 
 						{{/carousel-container}}
                 
                   </div>
-            </div>
+           
         </div>
     </div>
 </header>
 
 
-<div class="popularLocations">
-
+<div class="popularLocations" style="width: 90%; margin-left: 47px;">
 
 <h4> Popular locations</h4>
+<div class="container-fluid" id="popularLoc" style="margin-left: 230px;">
+
+
 {{#each model.locations as |loc|}}
+<div style="float: left; width: 25%; padding: 15px;">
 <h5 id="city"> {{loc}}</h5>
+<h6 id="restNo">3126 restaurants</h6>
+</div>
 {{/each}}
-<a {{action "refreshModel"}}>OSVJEYI MODDEL</a>
+</div>
 </div>
 
 
  <div class="card">
-    
+
     <div class="card-block force-to-bottom">
-    <div class="container"> 
+    <div class="container">
  <div class="row ">
-  <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-0">
+  <div class="col-md-12 col-sm-12 col-xs-12 col-md-offset-0" style="margin-top:-24px;">
       <li3 style="float:left " small class="text-muted"><a href="#privacy">Privacy Policy</a></li3>
   <li3 style="float:left "><a class="term" href="#term">Term of use</a></li3>
   <li3 style="float:left "><a href="#sitemap">Sitemap</a></li3>
@@ -187,9 +207,12 @@
     <li2 style="float:right"><a class="careers" href="#careers">Careers</a></li2>
     <li2 style="float:right" ><a class="press" href="#press">Press</a></li2>
      <li2 style="float:right"><a class="add" href="#add">Advertise</a></li2>
+     
 </div>
+<li4 style="padding-top:15px;" >Copyright © 2016 All rights reserved.</li4>
+
   </div>
   </div>
- 
+
     </div>
   </div>

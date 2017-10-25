@@ -53,8 +53,10 @@ public class UsersController extends Controller {
         }
 
        this.UsersService.create(User);
-
-        return ok();
+       if(User.getFirstname()==null ||User.getLastname()==null|| User.getEmail()==null || User.getPasswor()==null || User.getPhone()==null || User.getCity()==null ) return ok();
+        ObjectNode valid = Json.newObject();
+        valid.put("wellcome", "w");
+        return ok(valid);
 
     }
     @Transactional

@@ -22,7 +22,7 @@ export default CustomAjax.extend({
             this.request('/restaurants')
                 .then(data => {
                     resolve(data);
-                    alert(data.city);
+                   // alert(data.city);
                 })
                 .catch(error => {
                     this.set('errorMessage', error);
