@@ -85,6 +85,7 @@ public class UsersController extends Controller {
             valid.put("token", "Invalid user or password");
             return badRequest(valid);
         }
+       // System.out.println(token);
         return ok(item);
     }
     public String authenticate (Login login){

@@ -21,7 +21,7 @@ public  class RestaurantService {
 
          return restaurantRepository.create(restaurant);
      }*/
-    public List<String> getAllRestaurants() {
+    public List<Object[]> getAllRestaurants() {
         //  System.out.println( user.getId());
         return restaurantRepository.getAllRestaurants();
     }

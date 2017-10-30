@@ -15,6 +15,7 @@ import models.Restoran;
 import org.hibernate.cfg.Configuration;
 import play.libs.Json;
 import java.util.List;
+import java.util.ArrayList;
 import play.data.FormFactory;
 import models.Restoran;
 import models.Login;
@@ -30,16 +31,23 @@ import play.libs.Json;
 public class RestaurantRepository{
 
     @Transactional
-    public List<String> getAllRestaurants(){
-        String hql = "select name from Restaurant";
+    public List<Object[]> getAllRestaurants(){
+        String hql = "select r from Restoran r";
         // session("email", login.getEmail());
         // ObjectNode item = Json.newObject();
         //item.put("token", token);
-        Query query = JPA.em().createQuery(hql);
-        List<String> list=query.getResultList();
-        System.out.println(list.get(0));
+
+        Query query = JPA.em().createQuery("select id,name, address,description, priceRange ,rating,imageFile,openTime,closeTime,phone,coverFile,longitude,latitude from Restoran");
+        List<Object[]> list=query.getResultList();
+        // Restoran r= list.get(0);
+         for(Object[] r: list)
+        System.out.println(r[7]);
+
+      //  List<Restoran>r = new ArrayList<Restoran>();
+
 
         return list;
+       // return list;
     }
 }
 

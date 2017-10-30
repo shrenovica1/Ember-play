@@ -31,14 +31,13 @@ restaurantService: service('restaurant-service'),
                                         .catch(error => {
                                             return null;
                                         }),
-         restaurants: ['Metropolis', 'Vapiano', 'Manolo', 'Picolo Mondo', 'Montana', 'Chipas'],
-          /*this.get('restaurantService').getRestaurants()
+         restaurants: this.get('restaurantService').getRestaurants()
                                         .then(data => {
-                                            return data.city;
+                                            return data.restaurants.slice(0,7);
                                         })              
                                         .catch(error => {
                                             return null;
-                                        }),*/
+                                        }),
 
 
   	 });

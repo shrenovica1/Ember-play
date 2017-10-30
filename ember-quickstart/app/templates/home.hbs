@@ -43,12 +43,12 @@
     <div class="container" id="popularLocations" style="margin: 0px; width:33%; ">
 
   
-  <div class="komponenta" style="margin-top: 50px;">
+  <div class="komponenta" style="margin-top: 50px; margin-left: 10px; margin-right: 70px;">
     <div class="col-md-3 col-xs-6 col-sm-3" id="komp">
      <div style="float:left; margin: 0; padding: 0; margin-bottom:0px; " >
-     <img src="{{unbound relativePath}}assets/single-restaurant.jpeg" class="rounded" id= "boja">
+     <img src={{restaurant.imageFile}} class="rounded" id= "boja">
      <div style=" float:left;">
-     <h5 style="padding-left: 10px;" > {{restaurant}}</h5>
+     <h5 style="padding-left: 10px;" > {{restaurant.name}}</h5>
      </div>
 
      
@@ -64,7 +64,7 @@
            <h6 > $$$$</h6>
            </div>
             <div style=" float:right; margin-top: 5px; padding-left:10px;">
-           <h6 > (175)</h6>
+           <h6 > ({{restaurant.rating}})</h6>
            </div>
           <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Great - 5 stars"></label>
           <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
@@ -88,7 +88,11 @@
         
       </div>
      
-       <input type="submit" value="Reserve now" class="btn  btn-reg" style="width:100%">
+         <input   type="hidden" class="form-control"  value="{{restaurant.name}}" id="restID"/>
+      
+     
+     
+       <button {{action "select" restaurant}}   class="btn  btn-reg" style="width:100%">Reserve now</button>
         </div>
     </div>
   

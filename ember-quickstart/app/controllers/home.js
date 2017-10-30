@@ -1,70 +1,81 @@
 import Ember from 'ember';
 import RSVP from 'rsvp';
 
+const {
+    inject: {
+      service
+    }
+  } = Ember;
+
 export default Ember.Controller.extend({
+  
+ ajax: Ember.inject.service(),
+ singleRestaurantService: service('single-restaurant'),
+ restaurant: null,
+ id: null,
+ 
+ self: this,
+actions:{
+  select(restaurant){
 
-	/*model(){
-		return RSVP.hash({
-		restaurants: ['Cue', 'Metropolissss', 'Restoran', 'Metropolis', 'Montana', 'Chipas'],
-		locations: 
-	});
-}
-*/
-
-	/*  ajax: Ember.inject.service(),
-	  self: this,
-	  listOfCities: null,
-
-	  
-  model() {
-    // var cities;
-    	 var response = this.get('ajax').request('/location',{
+alert(restaurant.name);
+      var response = this.get('ajax').post('/singleRestaurant', {
           contentType: 'application/json',
-          dataType: 'json',
+          dataType: "json",
         xhrFields: {
           withCredentials: true
         },
-    // var cities= JSON.stringify(locations.city);
-     // var res=cities[0];
-     //var 
-     success : function (odg) {
-     //	 console.log(odg.city);
-     //	self.listOfCities = odg.city;
-        alert("The server says: " +odg.city); 
-       
-       // cities.push(odg.city[0]);
-    // var cities=odg;
-      //alert(cities);
-       // document.getElementById("city").innerHTML=odg.city;  
-       // document.getElementById("city").innerHTML=cities[1];  
-        } //$("city").val(odg.city[0]);
+        data: JSON.stringify({
+                              id: restaurant.id,
+                              name: restaurant.name,
+                              address: restaurant.address,
+                              description: restaurant.description,
+                              pricerange: restaurant.pricerange,
+                              rating: restaurant.rating,
+                              profileimagefile: restaurant.profileimagefile,
+                              opentime: restaurant.opentime,
+                              closetime: restaurant.closetime,
+                              phone: restaurant.phone,
+                              coverfile: restaurant.coverfile,
+                              longitude: restaurant.longitude,
+                              latitude: restaurant.latitude
 
-      
-   });
-debugger
-    	return RSVP.hash({
-		//	home: self.listOfCities
-		});
 
-   //   alert("The server says: " +JSON.stringify(response));  
-//return data;
-/*response.then(() => function (odg) {
-     	 data=odg;
-     	
-        alert("The server says: " +odg.city);  
-        
+
+
+                            // alert(document.getElementById("restID").value);
+                              }),
+         success : function (odg) {
+          self.restaurant=odg.restaurant;
+          // 
+
+           //
+          //  alert( odg.id);
+            // alert(self.id);
+          // singleRestaurantService.setCurrentRestaurant(odg);
+         }
+
+      });
+      response.then( () => {
+    // alert(response);
+      this.get('singleRestaurantService').setCurrentRestaurant(self.restaurant);
+//     alert  (this.get('singleRestaurantService').getCurrentRestaurant());
+
+
+      this.transitionToRoute('restaurant')
+      },
+         (error) => {
+          alert("Invalid form");
+           
         }
+         
+        
+      );
+    
+  
+  },
 
-	)
-
-  },*/
-
-  /*actions: {
-  	refreshModel() {
-	  	debugger
-	  	this.refresh();
-	  }
-	}*/
+}
 
 });
 	

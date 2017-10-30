@@ -37,7 +37,7 @@ export default Ember.Controller.extend({
           //this.get('session').setToken(email,  password, odg.token);
          //this.get('session').setToken(email,  password, odg.token);
          // this.get('loginService').set('token', odg.token);
-            //alert("The server says: " + odg.token);
+          //  alert("The server says: " + odg.token);
         
         }
         
@@ -47,7 +47,7 @@ export default Ember.Controller.extend({
   
       response.then( () => {
         this.get('session').setToken(token);
-       //    alert(token);
+           //alert(token);
         this.transitionToRoute('home')},
          (error) => {
           alert("Invalid username or password");

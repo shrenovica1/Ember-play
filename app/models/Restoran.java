@@ -94,8 +94,6 @@ public class Restoran {
             inverseJoinColumns = @JoinColumn(name = "cousine"))
     private List<Cousine> Cousine = new ArrayList<>();*/
 
-    public Restoran() {
-    }
 
 
 
@@ -176,7 +174,7 @@ public class Restoran {
     public void setMenu(List<String> menu) {
         Menu = menu;
     }
-
+*/
     public String getImageFile() {
         return imageFile;
     }
@@ -189,9 +187,13 @@ public class Restoran {
         return coverFile;
     }
 
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
     public void setCoverFile(String coverFile) {
         this.coverFile = coverFile;
-    }*/
+    }
 
     public Double getLongitude() {
         return longitude;
@@ -238,8 +240,22 @@ public class Restoran {
     public void setName(String name) {
         this.name = name;
     }
-    public Restoran(String name){
-        this.name=name;
+
+    public Restoran(String name, String address, String description, Double priceRange, Double rating, String imageFile, String openTime, String closeTime, String phone, String coverFile, Double longitude, Double latitude) {
+        this.name = name;
+        this.address = address;
+        this.description = description;
+        this.priceRange = priceRange;
+        this.rating = rating;
+        this.imageFile = imageFile;
+        this.openTime = openTime;
+        this.closeTime = closeTime;
+        this.phone = phone;
+        this.coverFile = coverFile;
+        this.longitude = longitude;
+        this.latitude = latitude;
     }
+
+    public Restoran(){}
 
 }

@@ -42,7 +42,7 @@
   <div class="container" id="Name">
   	 <div class="col-md-5 col-sm-12 col-xs-12" id="tableName">
   	 	<div class="row" id="upper">
-   <h3>Restaurant Name</h3>
+   <h3>{{model.restaurant.name}}</h3>
 </div>
 <div class="row" id="lower">
    <h6>Italian | International | Mediterranean </h6>
@@ -106,24 +106,47 @@
 
 <div class="container" id="map">
 	<h5 id="make">About RestaurantName</h5>
-	{{#g-map markersFitMode='live' as |context|}}
-  {{g-map-marker context lat=37.7933 lng=-122.4167}}
-  {{g-map-marker context lat=37.7833 lng=-122.4267}}
-  {{g-map-marker context lat=37.7733 lng=-122.4067}}
+  <div id="gmapa">
+	{{#g-map lat=43.856378 lng=18.405487 zoom=18 as |context|}}
+  {{g-map-marker context lat=43.856378 lng=18.405487 }}
+ 
 {{/g-map}}
+  </div>
+  <h6 id="desc">Description:</h6>
+  <p id="RestaurantDesc">“Chi va piano, va sano e va lontano”:  According to an Italian proverb, “If you have an easy-going and relaxed approach to life, you’ll live more healthily and longer”.  And this is exactly the attitude which is lived every day in our Vapianos—by both our guests and our employees, the Vapianisti.  It has been this way since the 22nd of October, 2002, when the first Vapiano in Hamburg, Germany, opened its doors at the “Hohen Bleichen”.  Two years later, the founders decided to set Vapiano on a world tour as a franchise concept.  Today there are already Vapianos in more than 30 countries on 5 continents, and many more international openings planned for the future.</p>
+
 	</div>
 
+
 <div class="container" id="Restmenu">
-	<h5 id="make">Menu:</h5>
+	<h5 id="make" style="float: left;">Menu:</h5>
+  <div id="menuBar">
+    <li style="float:left; margin: 0; padding: 0; border: 0; " >
+      <button type="button" class="btn btn-table" id="test" >
+           Breakfast
+        </button>
+      </li>
+      <li style="float:left; margin: 0; padding: 0; border: 0; " >
+      <button type="button" class="btn btn-table" id="test" >
+           Lunch
+        </button>
+      </li>
+      <li style="float:left; margin: 0; padding: 0; border: 0; " >
+      <button type="button" class="btn btn-table" id="test" >
+           Dinner
+        </button>
+      </li>
+    
+  </div>
 	</div>
 
 <div class="container" id="Restphotos">
 	<h5 id="make">Restaurant photos: </h5>
 	<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 500px; width: 340px; display: inline-block; float: left;">
 
-		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left;">
-		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left;">
-		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left;">
+		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left; padding: 5px; margin-top: -5px;">
+		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left; padding: 5px;  margin-top: -5px;">
+		<img src="assets/spicy.jpg" class="rounded mx-auto d-block" style="height: 160px; width: 160px; display: inline-block; float: left; padding: 5px; margin-top: -5px;">
 
 
 

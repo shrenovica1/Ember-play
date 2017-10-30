@@ -11,6 +11,8 @@ POST     /singin                  controllers.UsersController.signin
 +nocsrf
 POST    /signout                  controllers.UsersController.logout
 
++nocsrf
+POST    /singleRestaurant         controllers.RestaurantController.getSingleRestaurant
 
 GET     /location                  controllers.CityController.getAllCities
 GET     /restaurants               controllers.RestaurantController.getAllRestaurants
