@@ -11,14 +11,16 @@ export default Ember.Controller.extend({
   
  ajax: Ember.inject.service(),
  singleRestaurantService: service('single-restaurant'),
+  session: Ember.inject.service('login'),
  restaurant: null,
+ breakfastMenu: null,
+ lunchMenu: null,
+ dinnerMenu: null,
+ photos:null,
  id: null,
- 
  self: this,
 actions:{
   select(restaurant){
-
-alert(restaurant.name);
       var response = this.get('ajax').post('/singleRestaurant', {
           contentType: 'application/json',
           dataType: "json",
@@ -32,7 +34,7 @@ alert(restaurant.name);
                               description: restaurant.description,
                               pricerange: restaurant.pricerange,
                               rating: restaurant.rating,
-                              profileimagefile: restaurant.profileimagefile,
+                              profileimagefile: restaurant.imageFile,
                               opentime: restaurant.opentime,
                               closetime: restaurant.closetime,
                               phone: restaurant.phone,
@@ -41,27 +43,24 @@ alert(restaurant.name);
                               latitude: restaurant.latitude
 
 
-
-
-                            // alert(document.getElementById("restID").value);
                               }),
          success : function (odg) {
+          alert(odg.photos);
           self.restaurant=odg.restaurant;
-          // 
-
-           //
-          //  alert( odg.id);
-            // alert(self.id);
-          // singleRestaurantService.setCurrentRestaurant(odg);
+          self.breakfastMenu=odg.menu.get(0).breakfast;
+          self.lunchMenu=odg.menu.get(1).lunch;
+          self.dinnerMenu=odg.menu.get(2).dinner;
+          self.photos=odg.photos;
+          
          }
 
       });
       response.then( () => {
-    // alert(response);
       this.get('singleRestaurantService').setCurrentRestaurant(self.restaurant);
-//     alert  (this.get('singleRestaurantService').getCurrentRestaurant());
-
-
+      this.get('singleRestaurantService').setBreakfastMenu(self.breakfastMenu);
+      this.get('singleRestaurantService').setLunchMenu(self.lunchMenu);
+      this.get('singleRestaurantService').setDinnerMenu(self.dinnerMenu);
+      this.get('singleRestaurantService').setPhotos(self.photos);
       this.transitionToRoute('restaurant')
       },
          (error) => {

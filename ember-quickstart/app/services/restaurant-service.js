@@ -1,3 +1,4 @@
+
 import CustomAjax from './ajax';
 
 export default CustomAjax.extend({
@@ -8,7 +9,6 @@ export default CustomAjax.extend({
             this.request('/location')
                 .then(data => {
                     resolve(data);
-                    //alert(data.city);
                 })
                 .catch(error => {
                     this.set('errorMessage', error);
@@ -22,7 +22,6 @@ export default CustomAjax.extend({
             this.request('/restaurants')
                 .then(data => {
                     resolve(data);
-                   // alert(data.city);
                 })
                 .catch(error => {
                     this.set('errorMessage', error);

@@ -6,6 +6,7 @@ import org.hibernate.jpa.HibernateEntityManager;
 import play.db.jpa.JPA;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.*;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
@@ -18,6 +19,7 @@ import javax.persistence.Entity;
 import javax.validation.Constraint;
 import play.data.Form.*;
 import play.db.jpa.JPAApi;
+import models.Restoran;
 
 
 @Entity
@@ -29,8 +31,11 @@ public class RestaurantTable {
     @Column(name = "id")
     private  UUID id;
 
-    @Column(name = "restaurant_id")
-    private UUID restaurantId;
+    @ManyToOne
+    @JoinColumn(name = "restaurantid",
+            foreignKey = @ForeignKey(name = "restauranttables_restaurantid_fkey")
+    )
+    private Restoran restaurantId;
 
     @Column (name="chairs")
     private Integer chairs;
@@ -40,22 +45,29 @@ public class RestaurantTable {
 
 
     public RestaurantTable(){
-
     }
+    public RestaurantTable(String id){
+        this.id= UUID.fromString(id);
+        this.chairs=null;
+        this.restaurantId=null;
+    }
+
     public void setId(UUID id) {
         this.id=id;
     }
 
-    public UUID getRestaurantId(){
-        return restaurantId;
-    }
-    public void setRestaurntId(UUID restaurantId){
-        this.restaurantId=restaurantId;
-    }
     public Integer getChairs(){
         return chairs;
     }
     public void setChairs(Integer chairs){
         this.chairs=chairs;
+    }
+
+    public Restoran getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(Restoran restaurantId) {
+        this.restaurantId = restaurantId;
     }
 }
