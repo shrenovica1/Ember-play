@@ -12,7 +12,19 @@ POST     /singin                  controllers.UsersController.signin
 POST    /signout                  controllers.UsersController.logout
 
 +nocsrf
+POST    /reservationHistory                  controllers.UsersController.getReservationHistory
+
++nocsrf
 POST    /singleRestaurant         controllers.RestaurantController.getSingleRestaurant
++nocsrf
+POST    /ratePlace                 controllers.RestaurantController.ratePlace
+
++nocsrf
+POST    /findTable                  controllers.RestaurantController.getTables
+
++nocsrf
+POST    /makeReservation             controllers.ReservationController.makeReservation
+
 
 GET     /location                  controllers.CityController.getAllCities
 GET     /restaurants               controllers.RestaurantController.getAllRestaurants

@@ -21,9 +21,10 @@ import models.Login;
 import java.util.UUID;
 import play.data.*;
 import javax.validation.Validator;
-//import org.hibernate.Query;
 import org.hibernate.jpa.HibernateEntityManager;
 import models.HibernateUtil;
+import java.util.List;
+import java.util.ArrayList;
 
 
 
@@ -73,13 +74,24 @@ public  class usersRepository{
 
         return false;
     }
-   /* private Class<T> getParametrizedClass() {
-        return (Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
-    }*/
 
-    /*protected Criteria getBaseCriteria() {
-        Session session = ((HibernateEntityManager) JPA.em()).getSession();
-        return session.createCriteria();
-    }*/
+    @Transactional
+    public String getUserId(String email){
+
+        String hql = "select id from users where email ='" + email + "'";
+        Query query = JPA.em().createQuery(hql);
+        String id = query.getSingleResult().toString();
+        return id;
+    }
+    @Transactional
+    public List<Object[]> getHistory(String id){
+
+        String hql="select r.id, TO_CHAR(r.reservationTime , 'DD/MM/YYYY HH24:MI:SS') from Reservation r";
+        //String hql = "select r.reservationTime, rt.chairs, rest.name from Reservation r, RestaurantTable rt, Restoran rest where r.tableId=rt.id and rest.id=rt.restaurantId and r.userId='"+id+"'";
+        Query query = JPA.em().createQuery(hql);
+        List<Object[]> result= query.getResultList();
+        return result;
+    }
+
 
 }

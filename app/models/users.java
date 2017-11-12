@@ -82,6 +82,18 @@ public class users {
        // this.setPassword(password);
 
     }
+    public users(String id) {
+        this.id= UUID.fromString(id);
+        this.firstname = null;
+        this.lastname=null;
+        this.email = null;
+        this.country=null;
+        this.city=null;
+        this.phone=null;
+        this.passwor=null;
+        // this.setPassword(password);
+
+    }
 
 
     public UUID getId() { return id; }

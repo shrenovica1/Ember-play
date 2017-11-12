@@ -17,7 +17,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.validation.Constraint;
 import play.data.Form.*;
+import javax.persistence.*;
 import play.db.jpa.JPAApi;
+import models.Restoran;
 
 
 @Entity
@@ -31,6 +33,11 @@ public class Review {
 
     @Column(name = "name")
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "restaurant",
+            foreignKey = @ForeignKey(name = "restaurantId")
+    )
+    private Restoran restaurant;
 
     public UUID getId() {
         return id;
@@ -47,4 +54,5 @@ public class Review {
     public Review(String name){
         this.name=name;
     }
+    public Review(){}
 }

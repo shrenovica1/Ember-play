@@ -32,9 +32,6 @@ public class CityRepository{
     @Transactional
     public List<String> getAllCities(){
         String hql = "select name from City";
-        // session("email", login.getEmail());
-       // ObjectNode item = Json.newObject();
-        //item.put("token", token);
         Query query = JPA.em().createQuery(hql);
         List<String> list=query.getResultList();
         System.out.println(list.get(0));

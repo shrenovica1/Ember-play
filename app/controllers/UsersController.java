@@ -19,9 +19,9 @@ import play.mvc.Controller;
 import models.JwtUtility;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import play.libs.Json;
-/*import org.json.JSONArray;
-import org.json.JSONObject;
-import org.json.JSONException;*/
+import java.util.List;
+import java.util.ArrayList;
+import models.ReservationHistory;
 
 
 
@@ -41,6 +41,7 @@ public class UsersController extends Controller {
     public void setUsersService(usersService usersService) {
         this.UsersService = usersService;
     }
+
 
     @Transactional
     public Result create() {
@@ -74,12 +75,17 @@ public class UsersController extends Controller {
         this.UsersService.signin(login);
         System.out.println("kontroler "+ login.getPassword());
 
+        String sessionToken= this.UsersService.getUserId(login.getEmail());
+
         String result= authenticate(login);
         JwtUtility jwt= new JwtUtility();
         String token=jwt.makeToken();
 
+
+
         ObjectNode item = Json.newObject();
-        item.put("token", token);
+        item.put("token", sessionToken);
+        item.put("email", login.getEmail());
         if(result.equals("Invalid user or password")) {
             ObjectNode valid = Json.newObject();
             valid.put("token", "Invalid user or password");
@@ -107,6 +113,20 @@ public class UsersController extends Controller {
     public Result logout(){
         session().clear();
     return ok();
+    }
+    @Transactional
+    public Result getReservationHistory(){
+        Form<ReservationHistory> reservationHistoryForm = formFactory.form(ReservationHistory.class);
+        ReservationHistory history = reservationHistoryForm.bindFromRequest().get();
+
+        if (reservationHistoryForm.hasErrors()) {
+            return badRequest("form has errors");
+        }
+        System.out.println(history.getUserId());
+        List<Object[]> userReservations= this.UsersService.getHistory(history.getUserId());
+        ObjectNode item = Json.newObject();
+        item.put("reservations", Json.toJson(userReservations));
+        return ok(item);
     }
 
 
