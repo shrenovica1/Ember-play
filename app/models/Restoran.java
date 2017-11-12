@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import java.util.Base64;
+import java.util.stream.Collectors;
 import java.util.UUID;
 import java.lang.Object;
 import javax.persistence.EntityManager;
@@ -23,6 +24,7 @@ import play.data.Form.*;
 import play.db.jpa.JPAApi;
 import models.Review;
 import models.Photo;
+import models.Menu;
 
 @Entity
 @Table(name="\"restaurant\"")
@@ -48,14 +50,14 @@ public class Restoran {
     @Column(name = "rating")
     private Double rating;
 
-    /*@OneToMany(mappedBy = "restaurantId")
+    @OneToMany(mappedBy = "restaurant")
     private List<Review> Reviews = new ArrayList<>();
 
-    @OneToMany(mappedBy = "restaurantId")
-    private List<String> Menu = new ArrayList<>();
+    @OneToMany(mappedBy = "restaurant")
+    private List<Menu> Menu = new ArrayList<>();
 
-    @OneToMany(mappedBy = "restaurantId")
-    private List<Photo> photos;*/
+    @OneToMany(mappedBy = "restaurant")
+    private List<Photo> photos;
 
     @Column(name = "profileImageFile")
     private String imageFile;
@@ -81,21 +83,18 @@ public class Restoran {
     @Column(name = "latitude")
     private Double latitude;
 
-   /* @ManyToOne
-    @JoinColumn(name = "location",
-            foreignKey = @ForeignKey(name = "restaurants_location")
+    @ManyToOne
+    @JoinColumn(name = "city",
+            foreignKey = @ForeignKey(name = "restaurant_city")
     )
-    private City location;*/
+    private City location;
 
-   /* @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
             name = "restaurant_cousine",
             joinColumns = @JoinColumn(name = "restaurant"),
             inverseJoinColumns = @JoinColumn(name = "cousine"))
-    private List<Cousine> Cousine = new ArrayList<>();*/
-
-
-
+    private List<Cousine> Cousine = new ArrayList<>();
 
     public String getAddress() {
         return address;
@@ -113,13 +112,13 @@ public class Restoran {
         this.rating = rating;
     }
 
- /*   public List<Photo> getPhotos() {
+   public List<Photo> getPhotos() {
         return photos;
     }
 
     public void setPhotos(List<Photo> photos) {
         this.photos = photos;
-    }*/
+    }
 
     public String getOpenTime() {
         return openTime;
@@ -159,7 +158,7 @@ public class Restoran {
         this.priceRange = priceRange;
     }
 
-  /*  public List<Review> getReviews() {
+    public List<Review> getReviews() {
         return Reviews;
     }
 
@@ -167,14 +166,14 @@ public class Restoran {
         Reviews = reviews;
     }
 
-    public List<String> getMenu() {
+    public List<Menu> getMenu() {
         return Menu;
     }
 
-    public void setMenu(List<String> menu) {
+    public void setMenu(List<Menu> menu) {
         Menu = menu;
     }
-*/
+
     public String getImageFile() {
         return imageFile;
     }
@@ -211,21 +210,21 @@ public class Restoran {
         this.latitude = latitude;
     }
 
-   /* public City getLocation() {
+    public City getLocation() {
         return location;
     }
 
     public void setLocation(City location) {
         this.location = location;
     }
-*/
-   /* public List<Cousine> getCousine() {
+
+    public List<Cousine> getCousine() {
         return Cousine;
     }
 
     public void setCousine(List<Cousine> cousine) {
         Cousine = cousine;
-    }*/
+    }
 
 
     public UUID getId() {

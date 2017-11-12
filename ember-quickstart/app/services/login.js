@@ -15,6 +15,9 @@ export default CustomAjax.extend({
     	this.set('token', token);
 
     },
+    getToken(){
+        return this.get('token');
+    },
 
    /*   login(email, password,token) {
         return new Promise((resolve, reject) => {

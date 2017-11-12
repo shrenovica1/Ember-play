@@ -8,13 +8,7 @@ const {
 
 
 export default Ember.Route.extend({
-	/*model(){
-		return RSVP.hash({
-		restaurants: ['Cue', 'Metropolissss', 'Restoran', 'Metropolis', 'Montana', 'Chipas'],
-		locations: 
-	});
-}
-*/
+	
 restaurantService: service('restaurant-service'),
 	  ajax: Ember.inject.service(),
 	  self: this,
@@ -41,39 +35,10 @@ restaurantService: service('restaurant-service'),
 
 
   	 });
-    // var promise= new Promise (
-    	
-    	/*	var response= this.get('ajax').request('/location',{
-          contentType: 'application/json',
-          dataType: 'json',
-
-        xhrFields: {
-          withCredentials: true
-        },
-    
-     success : function (odg) {
-     	 console.log(odg.city);
-     	self.listOfCities = odg.city;
-      
-        } 
-    
-       
-
-});
-    	
-debugger
-    	return RSVP.hash({
-			home: self.listOfCities
-		});*/
+  
  },
 
-  actions: {
-  	refreshModel() {
-	  	debugger
-	  	this.refresh();
-	  }
-	}
-
+ 
 });
 	
 

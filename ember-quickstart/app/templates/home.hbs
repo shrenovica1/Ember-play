@@ -54,10 +54,10 @@
      
      
       <div class="location-city-name" style="width:140px;  ">
-      <div class="rating" style="float: left;" >
+      <div class="star-rating" style="float: left;" >
 
 
-      <div class="rating" style="float:left; width:210px; ">
+      <div class="star-rating" style="float:left; width:210px; ">
       
 
            <div style="float:right; margin-top: 5px; padding-left:10px;">
@@ -66,7 +66,13 @@
             <div style=" float:right; margin-top: 5px; padding-left:10px;">
            <h6 > ({{restaurant.rating}})</h6>
            </div>
-          <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Great - 5 stars"></label>
+          {{star-rating restaurant.rating
+          readOnly=true
+          baseColor="#C8C8C8"
+          fillColor="#fd6f60"
+           width=15
+          height=15}}
+          <!--<input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Great - 5 stars"></label>
           <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
           <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
           <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Good - 3.5 stars"></label>
@@ -76,7 +82,7 @@
           <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Not so good - 1.5 stars"></label>
           <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Bad- 1 star"></label>
           <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Bad - 0.5 stars"></label>
-
+-->
            <hr style=" display: block;margin-top: 0.5em;color: black; width:250px;border-style: inset;border-width: 1px; opacity:0.5;"/> 
 
            <h6 style="padding-top: 0px; opacity:0.7;"> Italian | International | Mediterranean</h6>
@@ -92,7 +98,7 @@
       
      
      
-       <button {{action "select" restaurant}}   class="btn  btn-reg" style="width:100%">Reserve now</button>
+       <button {{action 'select' restaurant}} class="btn  btn-reg" style="width:100%">Reserve now</button>
         </div>
     </div>
   

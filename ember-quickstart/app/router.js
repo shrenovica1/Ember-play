@@ -16,6 +16,7 @@ Router.map(function() {
 
   this.route('restaurant');
   this.route('location');
+  this.route('reservation');
 });
 
 export default Router;

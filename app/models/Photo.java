@@ -18,7 +18,8 @@ import javax.persistence.Entity;
 import javax.validation.Constraint;
 import play.data.Form.*;
 import play.db.jpa.JPAApi;
-
+import javax.persistence.*;
+import models.Restoran;
 
 @Entity
 @Table(name="\"photo\"")
@@ -32,6 +33,12 @@ public class Photo {
     @Column(name = "photoPath")
     private String photoPath;
 
+    @ManyToOne
+    @JoinColumn(name = "restaurant",
+            foreignKey = @ForeignKey(name = "restaurantId")
+    )
+    private Restoran restaurant;
+
 
     public String getPhotoPath() {
         return photoPath;
@@ -41,22 +48,7 @@ public class Photo {
         this.photoPath = photoPath;
     }
 
-    public UUID getRestaurantId() {
-        return restaurantId;
-    }
-
-    public void setRestaurantId(UUID restaurantId) {
-        this.restaurantId = restaurantId;
-    }
-
-    @Column(name = "restaurant_id")
-    private UUID restaurantId;
-
-    public UUID getId() {
-        return id;
-    }
-
- public Photo(String photoPath){
+    public Photo(String photoPath){
         this.photoPath=photoPath;
     }
 }

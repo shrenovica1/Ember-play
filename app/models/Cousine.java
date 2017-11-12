@@ -47,4 +47,5 @@ public class Cousine {
     public Cousine(String name){
         this.name=name;
     }
+    public Cousine (){}
 }

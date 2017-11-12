@@ -12,10 +12,6 @@ export default Ember.Controller.extend({
 
  ajax: Ember.inject.service(),
  session: Ember.inject.service('login'),
-// tokenCurrentUser: null,
-
-//  grad=null,
-
 
 	actions:{
    // var token=null;
@@ -32,12 +28,7 @@ export default Ember.Controller.extend({
                               password: this.get('password')}),
         success : function (odg) {
           token=odg.token;
-         // tokenCurrentUser=token
-         // alert(response);
-          //this.get('session').setToken(email,  password, odg.token);
-         //this.get('session').setToken(email,  password, odg.token);
-         // this.get('loginService').set('token', odg.token);
-          //  alert("The server says: " + odg.token);
+         
         
         }
         
@@ -47,7 +38,8 @@ export default Ember.Controller.extend({
   
       response.then( () => {
         this.get('session').setToken(token);
-           //alert(token);
+        //alert( this.get('session').setToken(token))
+         
         this.transitionToRoute('home')},
          (error) => {
           alert("Invalid username or password");
